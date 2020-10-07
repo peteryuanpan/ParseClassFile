@@ -4,10 +4,11 @@
 - [项目背景](#项目背景)
 - [浅析类文件结构](#浅析类文件结构)
 - [浅析数据结构](#浅析数据结构)
+  - [Class_File](#Class_File)
   - [Unsigned](#Unsigned)
   - [U1U2U4U8](#U1U2U4U8)
   - [UString](#UString)
-  - [](#)
+  - [Constant_Info](#Constant_Info)
   - [](#)
   - [](#)
   - [](#)
@@ -121,7 +122,51 @@ Class文件最外层的格式如下
 |U2|attributes_count|1|
 |attribute_info|attributes|attributes_count|
 
-那么，我们就可以定义数据结构了
+那么，我们就可以定义数据结构了，全部定义完后继承关系如下
+
+![image](https://user-images.githubusercontent.com/10209135/95332987-bbb69880-08de-11eb-83e6-486daeef639f.png)
+
+#### Class_File
+
+根据Class文件最外层结构，可以定义Class_File类，它是继承Table类的
+
+[Class_File.java](src/main/java/model/Class_File.java)
+```
+public class Class_File extends Table {
+
+    public U4 magic;
+
+    public U2 minor_version;
+
+    public U2 major_version;
+
+    public U2 constant_pool_count;
+
+    public Constant_Info[] constant_infos;
+
+    public Class_Access_Flag class_access_flag;
+
+    public Class_Interface_Info this_class;
+
+    public Class_Interface_Info super_class;
+
+    public U2 interfaces_count;
+
+    public Class_Interface_Info[] interfaces;
+
+    public U2 fields_count;
+
+    public Field_Info[] field_infos;
+
+    public U2 methods_count;
+
+    public Method_Info[] method_infos;
+
+    public U2 attributes_count;
+
+    public Attribute_Info[] attribute_infos;
+}
+```
 
 #### Unsigned
 
@@ -348,5 +393,21 @@ public abstract class Constant_Info extends Table {
         sb.append(toStringDeclaredFields());
         return sb.toString();
     }
+```
+
+JDK8中常量池有17种类型，这里就不一一列举出来了
+
+```java
+    /**
+     * 常量池项的类型，JDK8中有17种（不算CONSTANT_UNKNOW_info）
+     */
+    public enum TYPE {
+
+        Constant_Unknow_Info((byte)0),
+
+        Constant_Utf8_Info((byte)1),
+
+        Constant_Integer_Info((byte)3),
+...
 ```
 
