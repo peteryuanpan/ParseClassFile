@@ -3,13 +3,15 @@
 
 - [项目背景](#项目背景)
 - [浅析类文件结构](#浅析类文件结构)
+- [Main函数所在类](#Main函数所在类)
 - [浅析数据结构](#浅析数据结构)
   - [Class_File](#Class_File)
   - [Unsigned](#Unsigned)
   - [U1U2U4U8](#U1U2U4U8)
   - [UString](#UString)
   - [Constant_Info](#Constant_Info)
-  - [](#)
+  - [Constant_Class_Info](#Constant_Class_Info)
+  ...
   - [](#)
   - [](#)
 
@@ -94,8 +96,6 @@ cafe babe 0000 0034 0026 0a00 0700 1809
 - 无符号数属于基本数据类型，以u1、u2、u4、u8来分别代表1个字节、2个字节、4个字节、8个字节的无符号数，无符号数可以用来描述数字、索引引用、数量值或者按照UTF-8编码构成字符串值
 - 表示由多个无符号数或者其他表作为数据项构成的复合数据类型，所有表都习惯地以_info结尾，表用于描述有层次关系的复合结构的数据，整个Class文件本质上就是一张表
 
-### 浅析数据结构
-
 根据上面对无符号数以及表的描述，我们可以简单的得到以下结论
 - 类文件中数据只有两种：无符号数、表
 - 无符号数有4种，分别是u1、u2、u4、u8，表示4种字节
@@ -122,7 +122,68 @@ Class文件最外层的格式如下
 |U2|attributes_count|1|
 |attribute_info|attributes|attributes_count|
 
-那么，我们就可以定义数据结构了，全部定义完后继承关系如下
+这样我们就可以去定义数据结构了
+
+### Main函数所在类
+
+在定义数据结构之前，我们先简单说明一下Main函数所在的类
+
+可以看出，Main函数所在类也是按照类文件最外层结构来设计的，每个函数对应一种类型，分别是**魔数、版本号、常量池、访问标志、本类父类接口、字段表、方法表、属性表**
+
+[ParseClassFile.java](src/main/java/parse/ParseClassFile.java)
+```java
+public class ParseClassFile {
+
+    private static Class_File parseMagic(Class_File class_file, InputStream is) throws Exception {
+
+    private static Class_File parseVersion(Class_File class_file, InputStream is) throws Exception {
+
+    private static Class_File parseConstantPool(Class_File class_file, InputStream is) throws Exception {
+
+    private static Class_File parseAccessFlag(Class_File class_file, InputStream is) throws Exception {
+
+    private static Class_File parseClassAndInterfaces(Class_File class_file, InputStream is) throws Exception {
+ 
+    private static Class_File parseFields(Class_File class_file, InputStream is) throws Exception {
+ 
+    private static Class_File parseMethods(Class_File class_file, InputStream is) throws Exception {
+
+    private static Class_File parseAttributes(Class_File class_file, InputStream is) throws Exception {
+
+    public static Class_File parse(String class_file_path) throws Exception {
+        System.out.println("--------Begin Parse Class File " + class_file_path + "--------");
+        Class_File class_file = new Class_File();
+
+        // 构造InputStream
+        InputStream is = new FileInputStream(class_file_path);
+
+        // 解析魔数
+        parseMagic(class_file, is);
+        System.out.println();
+
+        // 解析版本号
+        parseVersion(class_file, is);
+        System.out.println();
+
+        // 解析常量池
+        parseConstantPool(class_file, is);
+        System.out.println();
+        ...
+    }
+    
+    public static void main(String[] args) {
+        try {
+            parse(Constants.CLASS_FILE_PATH_1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### 浅析数据结构
+
+全部定义完后继承关系如下
 
 ![image](https://user-images.githubusercontent.com/10209135/95332987-bbb69880-08de-11eb-83e6-486daeef639f.png)
 
@@ -131,7 +192,7 @@ Class文件最外层的格式如下
 根据Class文件最外层结构，可以定义Class_File类，它是继承Table类的
 
 [Class_File.java](src/main/java/model/Class_File.java)
-```
+```java
 public class Class_File extends Table {
 
     public U4 magic;
@@ -410,4 +471,58 @@ JDK8中常量池有17种类型，这里就不一一列举出来了
         Constant_Integer_Info((byte)3),
 ...
 ```
+
+这里展开一下Constant_Info在继承关系树中的子树，规范中一共是17种常量池项，我多定义了一种Constant_Large_Numeric_Continued_Info，它是Constant_Double_Info和Constant_Long_Info之后必存在的一个常量池项
+
+![image](https://user-images.githubusercontent.com/10209135/95333512-747cd780-08df-11eb-8257-14cafc574ca5.png)
+
+#### Constant_Class_Info
+
+关于常量池项，我们就举一个例子，其他的常量池项就不展开一一说明了，可以看代码
+
+Constant_Class_Info表示类后接口的符号引用，它有两个子项，一个是tag（U1类型），一个是name_index（U2类型）
+
+U1类型的tag是每个常量池项必有的字段，因此放到Constant_Info类中定义了
+
+name_index是一个指向Constant_Utf8_Info类型的常量池的标志数
+
+常量池前有一个U2变量constant_pool_count，表示常量池的个数，常量池下标是从1开始的（比较特殊，其他的字段表、方法表都是从0），1,2,3,...,constant_pool_count-1 是所有常量池的标志（注意，是-1）
+
+那么name_index也就是 1,2,3,...,constant_pool_count-1 中的一个数，它指向的常量池项是Constant_Utf8_Info类型的（为了保证它，我加了fill方法来校验，就不展开说了）
+
+同时，为了存储和输出更具体的数据，我在许多常量池类中都加了具体index值指向的结果，比如 Constant_Info 类中的 Constant_Utf8_Info valueof_name_index
+
+[Constant_Class_Info.java](src/main/java/model/Constant_Class_Info.java)
+```java
+public class Constant_Class_Info extends Constant_Info {
+
+    // tag: 7
+
+    // 指向全限定名常量项的索引
+    private U2 name_index;
+
+    // index索引的具体值
+    private Constant_Utf8_Info valueof_name_index;
+
+    public Constant_Utf8_Info getValueofNameIndex() {
+        return valueof_name_index;
+    }
+
+    public static Constant_Class_Info create(InputStream is, U1 tag) throws IOException {
+        Constant_Class_Info ci = new Constant_Class_Info();
+        ci.tag = tag;
+        ci.name_index = U2.create(is);
+        ci.newBytes();
+        return ci;
+    }
+
+    public Constant_Class_Info fill(Constant_Info[] constant_infos) {
+        fillForException(name_index, constant_infos, Constant_Utf8_Info.class);
+        valueof_name_index = (Constant_Utf8_Info) constant_infos[name_index.getValue()];
+        return this;
+    }
+}
+```
+
+#### Access_Flag
 
