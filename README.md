@@ -1,6 +1,13 @@
 # ParseClassFile
 深入理解JAVA虚拟机，类文件结构解析
 
+- [项目背景](#项目背景)
+- [浅析类文件结构](#浅析类文件结构)
+- [浅析数据结构](#浅析数据结构)
+  - [Unsigned](#Unsigned)
+  - [U1U2U4U8及UString](#U1U2U4U8及UString)
+  - [](#)
+
 ### 项目背景
 
 我在学习JAVA虚拟机，其中有一个关键环节是学习类文件的结构
@@ -162,7 +169,7 @@ parseBytesToHexString方法将bytes数组转为可读的16进制形式的字符�
 }
 ```
 
-#### U1及U2及U4及U8
+#### U1U2U4U8及UString
 
 接下来定义4种无符号数
 
@@ -170,6 +177,7 @@ parseBytesToHexString方法将bytes数组转为可读的16进制形式的字符�
 
 U1中有一个create方法，外部函数如果需要生成一个U1，只需要使用类似于 U1 u1 = U1.create(inputStream); 的方法即可
 
+[U1.java](src/main/java/model/U1.java)
 ```java
 public class U1 extends Unsigned {
 
@@ -199,7 +207,47 @@ public class U1 extends Unsigned {
 
 U1中有一个成员变量 byte value;
 
-byte类型在JAVA中占1个字节，U1表示的是1个字节的无符号数，想一想，byte是有符号数，而U1表示的是无符号数，能用byte类型来表示U1吗？实际上是可以的，这里我就不展开了，熟悉二进制的朋友一定能自己理解
+byte类型在JAVA中占1个字节，U1表示的是1个字节的无符号数
+
+想一想，byte是有符号数，而U1表示的是无符号数，能用byte类型来表示U1吗？实际上是可以的，这里我就不展开了，熟悉二进制的朋友一定能自己理解
 
 类似的，U2、U4、U8都有一个成员变量，类型分别是short、int、long
 
+我还额外定义了一个UString基本类型，它没有在规范中
+
+[UString.java](src/main/java/model/UString.java)
+```
+public class UString extends Unsigned {
+
+    // 字节数组的字符串的长度
+    private int length;
+
+    // 字节数组的字符串
+    private String value;
+
+    public int getLength() {
+        return length;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    protected void newBytes() {
+        this.bytes = new byte[this.length];
+    }
+
+    public static UString create(InputStream is, int length) throws IOException {
+        UString ustring = new UString();
+        ustring.length = length;
+        ustring.newBytes();
+        ustring.read(is, ustring.bytes);
+        ustring.value = new String(ustring.bytes);
+        return ustring;
+    }
+
+    public String toString() {
+        return value + "(" + parseBytesToHexString() + ")";
+    }
+}
+```
