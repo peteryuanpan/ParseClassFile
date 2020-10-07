@@ -92,4 +92,114 @@ cafe babe 0000 0034 0026 0a00 0700 1809
 
 那么，我们就可以定义数据结构了
 
-首先是
+#### Unsigned
+
+定义抽象父类
+
+[Unsigned.java](src/main/java/model/Unsigned.java)
+```java
+public abstract class Unsigned {
+
+    // 无符号数或表的字节数组
+    byte[] bytes;
+
+    public byte[] getBytes() {
+        return bytes;
+    }
+
+    /**
+     * 派生类需要重写一个方法，然后实现字节数组bytes的new动作
+     * @return
+     */
+    abstract protected void newBytes();
+```
+
+它有一个关键的成员数组变量 byte[] bytes，用于存储Unsigned类的字节数组，所有的无符号数，表，包括常量池、字段表、方法表、属性表，包括类文件，都是Unsigned类的子类
+
+对于Unsigned类，还需要介绍两个方法，一个是read方法，一个是parseBytesToHexString方法
+
+read方法用于从InputStream中读取bytes.length长度的字节，并存储于bytes数组中
+
+parseBytesToHexString方法将bytes数组转为可读的16进制形式的字符串，在子类的toString方法中大量被使用到
+
+```java
+    /**
+     * 通过 inputStream 读取 bytes数组长度 的字节 到 bytes数组中，并用 Big-Endian 顺序计算整型值
+     * @param is
+     * @param bytes
+     * @return
+     * @throws IOException
+     */
+    protected long read(InputStream is, byte[] bytes) throws IOException {
+        if (is == null)
+            throw new NullPointerException("InputStream is null");
+        int len = is.read(bytes);
+        if (len == -1 || len != bytes.length)
+            throw new RuntimeException("len " + len + " is not equal bytes.length " + bytes.length);
+        long num = 0;
+        for (int i = 0; i < bytes.length; i++) {
+            num <<= 8;
+            num |= bytes[i] & 0xff;
+        }
+        return num;
+    }
+
+    /**
+     * 用 Big-Endian 顺序将字节数组转为字符串（十六进制表达式）
+     * @return
+     */
+    public String parseBytesToHexString() {
+        StringBuilder sb = new StringBuilder();
+        if (bytes == null)
+            throw new RuntimeException("bytes is null");
+        sb.append("0x");
+        for (int i = 0; i < bytes.length; i ++) {
+            sb.append(Character.forDigit((bytes[i] & 0xff) / 16, 16));
+            sb.append(Character.forDigit((bytes[i] & 0xff) % 16, 16));
+        }
+        return sb.toString();
+    }
+}
+```
+
+#### U1及U2及U4及U8
+
+接下来定义4种无符号数
+
+这里只以U1为例子说明，其他无符号数类似
+
+U1中有一个create方法，外部函数如果需要生成一个U1，只需要使用类似于 U1 u1 = U1.create(inputStream); 的方法即可
+
+```java
+public class U1 extends Unsigned {
+
+    // 字节数组的整型值（1个字节）
+    private byte value;
+
+    public byte getValue() {
+        return value;
+    }
+
+    protected void newBytes() {
+        this.bytes = new byte[1];
+    }
+
+    public static U1 create(InputStream is) throws IOException {
+        U1 u1 = new U1();
+        u1.newBytes();
+        u1.value = (byte) u1.read(is, u1.bytes);
+        return u1;
+    }
+
+    public String toString() {
+        return value + "(" + parseBytesToHexString() + ")";
+    }
+}
+```
+
+U1中有一个成员变量 byte value;
+
+byte类型在JAVA中占1个字节，U1表示的是1个字节的无符号数，想一想，byte是有符号数，而U1表示的是无符号数，能用byte类型来表示U1吗？实际上是可以的，这里我就不展开了，熟悉二进制的朋友一定能自己理解
+
+类似的，U2、U4、U8都有一个成员变量，类型分别是short、int、long
+
