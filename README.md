@@ -5,7 +5,11 @@
 - [浅析类文件结构](#浅析类文件结构)
 - [浅析数据结构](#浅析数据结构)
   - [Unsigned](#Unsigned)
-  - [U1U2U4U8及UString](#U1U2U4U8及UString)
+  - [U1U2U4U8](#U1U2U4U8)
+  - [UString](#UString)
+  - [](#)
+  - [](#)
+  - [](#)
   - [](#)
 
 ### 项目背景
@@ -169,7 +173,7 @@ parseBytesToHexString方法将bytes数组转为可读的16进制形式的字符�
 }
 ```
 
-#### U1U2U4U8及UString
+#### U1U2U4U8
 
 接下来定义4种无符号数
 
@@ -213,6 +217,10 @@ byte类型在JAVA中占1个字节，U1表示的是1个字节的无符号数
 
 类似的，U2、U4、U8都有一个成员变量，类型分别是short、int、long
 
+来看一下toString()方法，返回的结果是 value(parseBytesToHexString) 的形式，比如主版本的输出结果例子：major_version: 52(0x0034)，它表示JDK8
+
+#### UString
+
 我还额外定义了一个UString基本类型，它没有在规范中
 
 [UString.java](src/main/java/model/UString.java)
@@ -251,3 +259,39 @@ public class UString extends Unsigned {
     }
 }
 ```
+
+#### Table
+
+接下来定义表
+
+表示由无符号数或者表生成的复合数据类型
+
+[Table.java](src/main/java/model/Table.java)
+```java
+public abstract class Table extends Unsigned {
+
+    /**
+     * 实现字节数组bytes的new动作
+     * @return
+     */
+    protected void newBytes() {
+        List<byte[]> list_bytes = getListByteOfDeclaredFields();
+        this.bytes = ArrayUtils.newarray(list_bytes);
+    }
+```
+
+Table类中最关键的是toString方法，它定义了输出输出每一种表类型的结构，这一部分我们放到后面单独展开
+```java
+    /**
+     * 按照特有的格式返回<br>
+     * 注意：派生类调用toString()方法时，会自动调用该方法，此时this指向的是派生类的对象，非本类的对象
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+```
+
