@@ -101,6 +101,26 @@ cafe babe 0000 0034 0026 0a00 0700 1809
 - 表示由无符号数或者表生成的复合数据类型
 - Class文件也是一张表
 
+Class文件最外层的格式如下
+|类型|名称|数量|
+|--|--|--|
+|U4|magic|1|
+|U2|minor_version|1|
+|U2|major_version|1|
+|U2|costant_pool_count|1|
+|cp_info|costant_pool|costant_pool_count - 1|
+|U2|access_flags|1|
+|U2|this_class|1|
+|U2|super_class|1|
+|U2|interfaces_count|1|
+|U2|interfaces|interfaces_count|
+|U2|fields_count|1|
+|field_info|field|fields_count|
+|U2|methods_count|1|
+|method_info|method|methods_count|
+|U2|attributes_count|1|
+|attribute_info|attributes|attributes_count|
+
 那么，我们就可以定义数据结构了
 
 #### Unsigned
@@ -224,7 +244,7 @@ byte类型在JAVA中占1个字节，U1表示的是1个字节的无符号数
 我还额外定义了一个UString基本类型，它没有在规范中
 
 [UString.java](src/main/java/model/UString.java)
-```
+```java
 public class UString extends Unsigned {
 
     // 字节数组的字符串的长度
@@ -290,6 +310,41 @@ Table类中最关键的是toString方法，它定义了输出输出每一种表�
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(toStringClass());
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+```
+
+### Constant_Info
+
+Constant_Info类继承的是Table类，它是所有常量池项的父类，它也重写了toString方法，与Table类的toString方法略有不同，多了输出tag标志
+
+[Constant_Info.java](src/main/java/model/Constant_Info.java)
+```java
+public abstract class Constant_Info extends Table {
+
+    // 常量项必有的标志，每个标志代表一个常量项
+    U1 tag;
+
+    public U1 getTag() {
+        return tag;
+    }
+
+    protected void newBytes() {
+        List<byte[]> list_bytes = new ArrayList<>();
+        list_bytes.addAll(getListByteOfDeclaredObject(tag));
+        list_bytes.addAll(getListByteOfDeclaredFields());
+        this.bytes = ArrayUtils.newarray(list_bytes);
+    }
+
+    /**
+     * 对tag进行特殊处理
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append("\n").append("tag: [").append(tag).append("]");
         sb.append(toStringDeclaredFields());
         return sb.toString();
     }
