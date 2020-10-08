@@ -140,49 +140,35 @@ Class文件最外层的格式如下
 ```java
 public class ParseClassFile {
 
-    private static Class_File parseMagic(Class_File class_file, InputStream is) throws Exception {
-
-    private static Class_File parseVersion(Class_File class_file, InputStream is) throws Exception {
-
-    private static Class_File parseConstantPool(Class_File class_file, InputStream is) throws Exception {
-
-    private static Class_File parseAccessFlag(Class_File class_file, InputStream is) throws Exception {
-
-    private static Class_File parseClassAndInterfaces(Class_File class_file, InputStream is) throws Exception {
- 
-    private static Class_File parseFields(Class_File class_file, InputStream is) throws Exception {
- 
-    private static Class_File parseMethods(Class_File class_file, InputStream is) throws Exception {
-
-    private static Class_File parseAttributes(Class_File class_file, InputStream is) throws Exception {
-
     public static Class_File parse(String class_file_path) throws Exception {
-        System.out.println("--------Begin Parse Class File " + class_file_path + "--------");
         Class_File class_file = new Class_File();
-
+        class_file.class_file_path = class_file_path;
         // 构造InputStream
         InputStream is = new FileInputStream(class_file_path);
-
         // 解析魔数
         parseMagic(class_file, is);
-        System.out.println();
-
         // 解析版本号
         parseVersion(class_file, is);
-        System.out.println();
-
         // 解析常量池
         parseConstantPool(class_file, is);
-        System.out.println();
-        ...
-    }
-    
-    public static void main(String[] args) {
-        try {
-            parse(Constants.CLASS_FILE_PATH_1);
-        } catch (Exception e) {
-            e.printStackTrace();
+        // 解析访问标志
+        parseAccessFlag(class_file, is);
+        // 解析类与接口
+        parseClassAndInterfaces(class_file, is);
+        // 解析字段
+        parseFields(class_file, is);
+        // 解析方法
+        parseMethods(class_file, is);
+        // 解析属性
+        parseAttributes(class_file, is);
+        // 确认无字节可读
+        byte[] bytes = new byte[1];
+        if (is.read(bytes) != -1) {
+            throw new RuntimeException("class file has bytes remained");
         }
+        // 解析类文件结束
+        is.close();
+        return class_file;
     }
 }
 ```
