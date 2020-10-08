@@ -1,4 +1,4 @@
 package model;
 
-public class Attribute_Extend extends Table {
+public abstract class Attribute_Extend extends Table {
 }
