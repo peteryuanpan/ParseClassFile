@@ -33,16 +33,16 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 
 ### 成果展示
 
-类文件及解析结果都在 [src/main/resources/classfile](src/main/resources/classfile) 下
+类文件、源文件、解析结果都在 [src/main/resources/classfile](src/main/resources/classfile) 下
 
 其中类文件是二进制文件，无法直接打开查看，可以用SublimeText查看十六进制格式，或者IDEA查看反编译源码
 
-|类文件|解析结果|说明|
-|--|--|--|
-|[ClassFileDemo0.class](src/main/resources/classfile/ClassFileDemo0.class)|[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)||
-|[ClassFileDemo1.class](src/main/resources/classfile/ClassFileDemo1.class)|[ResultClassFileDemo1.txt](src/main/resources/classfile/ResultClassFileDemo1.txt)||
-|[ClassFileDemo2.class](src/main/resources/classfile/ClassFileDemo2.class)|[ResultClassFileDemo2.txt](src/main/resources/classfile/ResultClassFileDemo2.txt)||
-|[Object.class](src/main/resources/classfile/Object.class)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)||
+|类文件|源文件|解析结果|说明|
+|--|--|--|--|
+|[ClassFileDemo0.class](src/main/resources/classfile/ClassFileDemo0.class)|[ClassFileDemo0.java](src/main/resources/classfile/ClassFileDemo0.java)|[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)||
+|[ClassFileDemo1.class](src/main/resources/classfile/ClassFileDemo1.class)|[ClassFileDemo1.java](src/main/resources/classfile/ClassFileDemo1.java)|[ResultClassFileDemo1.txt](src/main/resources/classfile/ResultClassFileDemo1.txt)||
+|[ClassFileDemo2.class](src/main/resources/classfile/ClassFileDemo2.class)|[ClassFileDemo2.java](src/main/resources/classfile/ClassFileDemo2.java)|[ResultClassFileDemo2.txt](src/main/resources/classfile/ResultClassFileDemo2.txt)||
+|[Object.class](src/main/resources/classfile/Object.class)|[Object.java](src/main/resources/classfile/Object.java)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)||
 
 ### 浅析类文件结构
 
