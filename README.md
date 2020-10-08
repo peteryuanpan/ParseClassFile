@@ -37,6 +37,8 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 
 其中类文件是二进制文件，无法直接打开查看，可以用SublimeText查看十六进制格式，或者IDEA查看反编译源码
 
+源文件是.java格式的，解析结果是.txt格式的，可以直接打开查看
+
 |类文件|源文件|解析结果|说明|
 |--|--|--|--|
 |[ClassFileDemo0.class](src/main/resources/classfile/ClassFileDemo0.class)|[ClassFileDemo0.java](src/main/resources/classfile/ClassFileDemo0.java)|[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)||
