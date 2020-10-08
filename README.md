@@ -33,7 +33,7 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 
 ### 成果展示
 
-解析结果都在 [src/main/resources/classfile](src/main/resources/classfile) 下
+类文件及解析结果都在 [src/main/resources/classfile](src/main/resources/classfile) 下
 
 其中类文件是二进制文件，无法直接打开查看，可以用SublimeText查看十六进制格式，或者IDEA查看反编译源码
 
