@@ -275,7 +275,7 @@ public class ParseClassFile {
 
     public static void main(String[] args) {
         try {
-            parse(Constants.CLASS_FILE_PATH_1);
+            parse(Constants.CLASS_FILE_PATH_0);
         } catch (Exception e) {
             e.printStackTrace();
         }
