@@ -166,6 +166,8 @@ public class ParseClassFile {
         if (is.read(bytes) != -1) {
             throw new RuntimeException("class file has bytes remained");
         }
+        // 构建类文件的字节数组
+        class_file.newBytes();
         // 解析类文件结束
         is.close();
         return class_file;
