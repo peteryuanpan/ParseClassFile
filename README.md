@@ -4,7 +4,7 @@
 - [项目背景](#项目背景)
 - [成果展示](#成果展示)
 - [浅析类文件结构](#浅析类文件结构)
-- [Main函数所在类](#Main函数所在类)
+- [解析类文件结构主类](#解析类文件结构主类)
 - [浅析数据结构](#浅析数据结构)
   - [Class_File](#Class_File)
   - [Unsigned](#Unsigned)
@@ -33,7 +33,16 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 
 ### 成果展示
 
+类文件及解析结果都在 [src/main/resources/classfile](src/main/resources/classfile) 下
 
+其中类文件是二进制文件，无法直接打开查看，可以用SublimeText查看十六进制格式，或者IDEA查看反编译源码
+
+|类文件|解析结果|说明|
+|--|--|--|
+|[ClassFileDemo0.class](src/main/resources/classfile/ClassFileDemo0.class)|[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)||
+|[ClassFileDemo1.class](src/main/resources/classfile/ClassFileDemo1.class)|[ResultClassFileDemo1.txt](src/main/resources/classfile/ResultClassFileDemo1.txt)||
+|[ClassFileDemo2.class](src/main/resources/classfile/ClassFileDemo2.class)|[ResultClassFileDemo2.txt](src/main/resources/classfile/ResultClassFileDemo2.txt)||
+|[Object.class](src/main/resources/classfile/Object.class)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)||
 
 ### 浅析类文件结构
 
@@ -130,11 +139,11 @@ Class文件最外层的格式如下
 
 这样我们就可以去定义数据结构了
 
-### Main函数所在类
+### 解析类文件结构主类
 
-在定义数据结构之前，我们先简单说明一下Main函数所在的类
+在定义数据结构之前，我们先简单说明一下解析类文件结构主类
 
-可以看出，Main函数所在类也是按照类文件最外层结构来设计的，每个函数对应一种类型，分别是**魔数、版本号、常量池、访问标志、本类父类接口、字段表、方法表、属性表**
+可以看出，解析类文件结构主类也是按照类文件最外层结构来设计的，每个函数对应一种类型，分别是**魔数、版本号、常量池、访问标志、本类父类接口、字段表、方法表、属性表**
 
 [ParseClassFile.java](src/main/java/parse/ParseClassFile.java)
 ```java
