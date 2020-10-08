@@ -44,7 +44,7 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 |[ClassFileDemo0.class](src/main/resources/classfile/ClassFileDemo0.class)|[ClassFileDemo0.java](src/main/resources/classfile/ClassFileDemo0.java)|[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)||
 |[ClassFileDemo1.class](src/main/resources/classfile/ClassFileDemo1.class)|[ClassFileDemo1.java](src/main/resources/classfile/ClassFileDemo1.java)|[ResultClassFileDemo1.txt](src/main/resources/classfile/ResultClassFileDemo1.txt)||
 |[ClassFileDemo2.class](src/main/resources/classfile/ClassFileDemo2.class)|[ClassFileDemo2.java](src/main/resources/classfile/ClassFileDemo2.java)|[ResultClassFileDemo2.txt](src/main/resources/classfile/ResultClassFileDemo2.txt)||
-|[Object.class](src/main/resources/classfile/Object.class)|[Object.java](src/main/resources/classfile/Object.java)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)||
+|[Object.class](src/main/resources/classfile/Object.class)|[Object.java](src/main/resources/classfile/Object.java)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)|JDK中最常用的类，java.lang.Object|
 
 ### 浅析类文件结构
 
