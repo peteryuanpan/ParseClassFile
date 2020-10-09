@@ -857,10 +857,10 @@ attributes: []
 ...
 ```
 
-仔细观察的朋友，应该能看出一点规律，对于一个变量T t，它的输出规则是KEY: [ VALUE ]
+仔细观察的朋友，应该能看出一点规律，对于一个变量T t，它的输出规则是**KEY: [VALUE]**
 
 其中VALUE分几种情况
-- 如果它是U1、U2、U4、U8 或者 UString，则VALUE = value + "(" + parseBytesToHexString() + ")";
+- 如果它是U1、U2、U4、U8 或者 UString，则**VALUE = value(parseBytesToHexString())**
 ```java
     public String toString() {
         return value + "(" + parseBytesToHexString() + ")";
@@ -984,3 +984,12 @@ public abstract class Table extends Unsigned {
     }
 }
 ```
+
+可以看到toString方法实际上是分成了两个方法：toStringClass、toStringDeclaredFields
+
+toStringClass方法，**VALUE = ClassSimpleName(parseBytesToHexString())**
+
+toStringDeclaredFields方法，利用了反射的机制，获取this对象的DeclaredFields
+
+枚举每个Field，**VALUE = FieldName: [VALUE(Field)]"**
+
