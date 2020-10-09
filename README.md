@@ -718,7 +718,6 @@ switch(type) {
 ...写18个case...
 }
 constant_infos[i] = constant_info;
-}
 ```
 
 这样肯定是非常不合适的，它不满足设计模式六大原则之一：开闭原则（Open Close Principle）
