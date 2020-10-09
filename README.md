@@ -15,7 +15,8 @@
   - [Class_Access_Flag](#Class_Access_Flag)
   - [](#)
 - [关键技术点](#关键技术点)
-  - [](#)
+  - [利用反射实现常量池实例初始化](#利用反射实现常量池实例初始化)
+  - [利用继承加反射实现统一格式输出](#利用继承加反射实现统一格式输出)
 
 ### 项目背景
 
@@ -25,24 +26,26 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 
 对类文件结构的理解程度，决定了对虚拟机原理的理解深度
 
-我在 [深入理解JAVA虚拟机-第一至三层](https://github.com/peteryuanpan/notebook/blob/master/深入理解JAVA虚拟机-第一至三层) 中写了好多篇文章，关于虚拟机原理的，其中 [第2章类文件结构与字节码指令](https://github.com/peteryuanpan/notebook/tree/master/深入理解JAVA虚拟机-第一至三层#第2章类文件结构与字节码指令) 是类文件结构解析的章节，该项目是第2章理论的具体实现项目，第2章是该项目的理论文档
+我在 [深入理解JAVA虚拟机-第一至三层](https://github.com/peteryuanpan/notebook/blob/master/深入理解JAVA虚拟机-第一至三层) 中写了好多篇文章，都是关于虚拟机原理的，其中 [第2章类文件结构与字节码指令](https://github.com/peteryuanpan/notebook/tree/master/深入理解JAVA虚拟机-第一至三层#第2章类文件结构与字节码指令) 是类文件结构解析的章节，该项目是第2章理论的具体实现项目，第2章是该项目的理论文档
 
 我还参考了周志明的《深入理解JAVA虚拟机》第二版，其中第6章就是专门用于分析类文件结构的
 
-我希望写一个简单的项目，能从头到尾读取一份简单的类文件，并按一定易懂的格式输出其结果，这就是本项目最简单的目的（如果有拓展新功能，会在下面补充新的HEADER)
+我希望写一个简单的项目，核心功能是：**读入一份类文件，将每一个字节的含义按照特有的格式输出**
 
 ### 成果展示
 
-类文件及解析结果都在 [src/main/resources/classfile](src/main/resources/classfile) 下
+类文件、源文件、解析结果都在 [src/main/resources/classfile](src/main/resources/classfile) 下
 
 其中类文件是二进制文件，无法直接打开查看，可以用SublimeText查看十六进制格式，或者IDEA查看反编译源码
 
-|类文件|解析结果|说明|
-|--|--|--|
-|[ClassFileDemo0.class](src/main/resources/classfile/ClassFileDemo0.class)|[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)||
-|[ClassFileDemo1.class](src/main/resources/classfile/ClassFileDemo1.class)|[ResultClassFileDemo1.txt](src/main/resources/classfile/ResultClassFileDemo1.txt)||
-|[ClassFileDemo2.class](src/main/resources/classfile/ClassFileDemo2.class)|[ResultClassFileDemo2.txt](src/main/resources/classfile/ResultClassFileDemo2.txt)||
-|[Object.class](src/main/resources/classfile/Object.class)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)||
+源文件是.java格式的，解析结果是.txt格式的，可以直接打开查看
+
+|类文件|源文件|解析结果|说明|
+|--|--|--|--|
+|[ClassFileDemo0.class](src/main/resources/classfile/ClassFileDemo0.class)|[ClassFileDemo0.java](src/main/resources/classfile/ClassFileDemo0.java)|[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)||
+|[ClassFileDemo1.class](src/main/resources/classfile/ClassFileDemo1.class)|[ClassFileDemo1.java](src/main/resources/classfile/ClassFileDemo1.java)|[ResultClassFileDemo1.txt](src/main/resources/classfile/ResultClassFileDemo1.txt)||
+|[ClassFileDemo2.class](src/main/resources/classfile/ClassFileDemo2.class)|[ClassFileDemo2.java](src/main/resources/classfile/ClassFileDemo2.java)|[ResultClassFileDemo2.txt](src/main/resources/classfile/ResultClassFileDemo2.txt)||
+|[Object.class](src/main/resources/classfile/Object.class)|[Object.java](src/main/resources/classfile/Object.java)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)|JDK中最常用的类，java.lang.Object|
 
 ### 浅析类文件结构
 
@@ -118,24 +121,25 @@ cafe babe 0000 0034 0026 0a00 0700 1809
 - Class文件也是一张表
 
 Class文件最外层的格式如下
-|类型|名称|数量|
-|--|--|--|
-|U4|magic|1|
-|U2|minor_version|1|
-|U2|major_version|1|
-|U2|costant_pool_count|1|
-|cp_info|costant_pool|costant_pool_count - 1|
-|U2|access_flags|1|
-|U2|this_class|1|
-|U2|super_class|1|
-|U2|interfaces_count|1|
-|U2|interfaces|interfaces_count|
-|U2|fields_count|1|
-|field_info|field|fields_count|
-|U2|methods_count|1|
-|method_info|method|methods_count|
-|U2|attributes_count|1|
-|attribute_info|attributes|attributes_count|
+
+|序号|类型|名称|数量|
+|--|--|--|--|
+|1|U4|magic|1|
+|2|U2|minor_version|1|
+|3|U2|major_version|1|
+|4|U2|costant_pool_count|1|
+|5|cp_info|costant_pool|costant_pool_count - 1|
+|6|U2|access_flags|1|
+|7|U2|this_class|1|
+|8|U2|super_class|1|
+|9|U2|interfaces_count|1|
+|10|U2|interfaces|interfaces_count|
+|11|U2|fields_count|1|
+|12|field_info|field|fields_count|
+|13|U2|methods_count|1|
+|14|method_info|method|methods_count|
+|15|U2|attributes_count|1|
+|16|attribute_info|attributes|attributes_count|
 
 这样我们就可以去定义数据结构了
 
@@ -639,3 +643,392 @@ public class Class_Access_Flag extends Access_Flag {
 #### Attribute_Info
 
 #### Attribute_Extend
+
+### 关键技术点
+
+#### 利用反射实现常量池实例初始化
+
+小标题可能比较抽象，我以具体例子来说明
+
+就拿常量池来说，注意到在 [ParseClassFile.java#L27](src/main/java/parse/ParseClassFile.java#L27) 中，有一段如下的函数
+
+```java
+    private static Class_File parseConstantPool(Class_File class_file, InputStream is) throws Exception {
+        // 常量池容量计数值
+        U2 constant_pool_count = U2.create(is);
+        class_file.constant_pool_count = constant_pool_count;
+        // 解析每一个常量池项（从1开始，到constant_pool_count-1）
+        Constant_Info[] constant_infos = new Constant_Info[constant_pool_count.getValue()];
+        class_file.constant_infos = constant_infos;
+        // 创建常量池项
+        for (int i = 1; i < constant_pool_count.getValue(); i ++) {
+            // 常量池项的tag
+            U1 tag = U1.create(is);
+
+            Constant_Info.TYPE type = Constant_Info.TYPE.getTYPE(tag.getValue());
+
+            if (type == Constant_Info.TYPE.Constant_Unknow_Info)
+                throw new Exception("Constant_Unknow_Info tag: " + tag.getValue());
+
+            // 利用反射机制获取到类，调用create方法生成Constant_Info的派生类
+            Constant_Info constant_info = (Constant_Info) Class.forName("model." + type.name())
+                    .getMethod("create", InputStream.class, U1.class)
+                    .invoke(null, is, tag);
+
+            // 存入常量池数组
+            constant_infos[i] = constant_info;
+
+            if (type == Constant_Info.TYPE.Constant_Long_Info || type == Constant_Info.TYPE.Constant_Double_Info)
+                constant_infos[++i] = Constant_Large_Numeric_Continued_Info.create(is, null);
+        }
+        // 填充常量池数据
+        for (int i = 1; i < constant_pool_count.getValue(); i ++) {
+            if (constant_infos[i] != null)
+                constant_infos[i].fill(constant_infos);
+        }
+        return class_file;
+    }
+```
+
+Constant_Info类是常量池项的公共父类，Table类是Constant_Info类的父类
+
+parseConstantPool方法中，要做的事情是
+- 读取tag的值
+- 根据tag值查对应哪个Constant_Info
+- 初始化具体Constnat_Info的实例，并存入常量池数组中
+- 给每一个Constant_Info实例填充数据
+
+Constant_Info类有18个子类，如下图
+
+![image](https://user-images.githubusercontent.com/10209135/95333512-747cd780-08df-11eb-8257-14cafc574ca5.png)
+
+难道我们要每一个子类都写一个create方法语句吗，诸如
+```java
+U1 tag = U1.create(is);
+Constant_Info.TYPE type = Constant_Info.TYPE.getTYPE(tag.getValue());
+switch(type) {
+  case Constant_Class_Info:
+    Constant_Class_Info constant_class_info = Constant_Class_Info.create(is, tag);
+    break;
+  case Constant_Double_Info:
+    Constant_Double_Info constant_double_info = Constant_Double_Info.create(is, tag);
+    break;
+  case Constant_Dynamic_Info:
+    Constant_Dynamic_Info constant_dynamic_info = Constant_Dynamic_Info.create(is, tag);
+    break;
+...写18个case...
+}
+constant_infos[i] = constant_info;
+```
+
+这样肯定是非常不合适的，它不满足设计模式六大原则之一：开闭原则（Open Close Principle）
+
+> 开闭原则的意思是：对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，实现一个热插拔的效果。简言之，是为了使程序的扩展性好，易于维护和升级。
+
+如果后面还有新的Constant_Info类添加进来（对于常量池来说，数量相对有限，但对于Attribute_Info来说，可不一定了），我还要去修改swtich.. case.. 中的代码
+
+如果我中间某个逻辑错了，或者希望添加逻辑（比如create后再干一件事），我需要去添加18行代码...
+
+总之，这样做是很麻烦，不聪明的
+
+取而代之的，使用反射的方法来实现，会比较合适
+
+```java
+// 利用反射机制获取到类，调用create方法生成Constant_Info的派生类
+Constant_Info constant_info = (Constant_Info) Class.forName("model." + type.name())
+        .getMethod("create", InputStream.class, U1.class)
+        .invoke(null, is, tag);
+```
+
+上面这段代码巧妙运用了反射机制，会去加载model.typeName的类
+
+将Constant_Info.TYPE中的每个字段名字与Constant_Info每个子类名设计成一样，且Constant_Info每个子类名都有一个static修饰的create方法，且形参都是InputStream.class及U1.class
+
+比如Constant_Class_Info
+```java
+public class Constant_Class_Info extends Constant_Info {
+    public static Constant_Class_Info create(InputStream is, U1 tag) throws IOException {
+        Constant_Class_Info ci = new Constant_Class_Info();
+        ci.tag = tag;
+        ci.name_index = U2.create(is);
+        ci.newBytes();
+        return ci;
+    }
+}
+```
+
+比如Constant_Double_Info
+```java
+public class Constant_Double_Info extends Constant_Info {
+    public static Constant_Double_Info create(InputStream is, U1 tag) throws IOException {
+        Constant_Double_Info ci = new Constant_Double_Info();
+        ci.tag = tag;
+        ci.value = U8.create(is);
+        ci.newBytes();
+        return ci;
+    }
+}
+```
+
+这样的话，如果有一个新的常量池需要添加，我不需要去修改parseConstantPool中的代码，只需要新增一个Constant_Info的子类，实现好成员字段，静态create方法等即可了
+
+同样的，在Attribute_Info中也有类似的技术
+
+类、字段表、方法表都含有属性表的属性，Attribute_Info中提供一个方法统一实现属性表的创建（逐一读入name_index、length，然后初始化每一个Attribute_对象）
+
+[Attribute_Info.java#L51](src/main/java/model/Attribute_Info.java#L51)
+```java
+    /**
+     * 用于创建属性表，在类、字段表、方法表中都含有属性表，甚至Code属性中也有，因此写到这里并声明为public、static
+     * @param is
+     * @param length_attributes
+     * @param constant_infos
+     * @return
+     * @throws Exception
+     */
+    public static Attribute_Info[] createAttributes(InputStream is, int length_attributes, Constant_Info[] constant_infos) throws Exception {
+        // 创建属性表数组
+        Attribute_Info[] attribute_infos = null;
+        // 属性表size大于0才new，否则为null
+        if (length_attributes > 0) {
+            // 实例化属性表数组
+            attribute_infos = new Attribute_Info[length_attributes];
+            for (int i = 0; i < length_attributes; i ++) {
+                // 属性表结构第一项：name_index，指向常量池中的一个Constant_Utf8_Info，表示属性名
+                U2 name_index = U2.create(is);
+                // 获取属性名的具体值
+                fillForException(name_index, constant_infos, Constant_Utf8_Info.class);
+                Constant_Utf8_Info valueof_name_index = (Constant_Utf8_Info) constant_infos[name_index.getValue()];
+                // 属性表结构第二项：length，表示属性值所占用的字节数
+                U4 length = U4.create(is);
+                // 属性名有很多，比如 Code、Exceptions、ConstantValue、InnerClasses等
+                // 每一个属性类，名字都加上了一个前缀Attribute_，并且属于package model下
+                // 使用反射的方法获取到具体属性类的class对象
+                Class clazz = Class.forName("model.Attribute_" + valueof_name_index.getValueString().getValue());
+                // 每一个派生属性类都应该定义一个create方法，如下
+                // public static create(InputStream is, U2 index_attribute_name, Constant_Utf8_Info value_attribute_name, U4 attribute_length, Constant_Info[] constant_infos)
+                // 通过class对象获取到method
+                Method method = clazz.getMethod("create", InputStream.class, U2.class, Constant_Utf8_Info.class, U4.class, Constant_Info[].class);
+                // 调用create方法获取到具体的属性对象
+                // 由于create方法是static的，因此invoke方法第一个参数为null
+                Attribute_Info attribute_info = (Attribute_Info) method.invoke(null, is, name_index, valueof_name_index, length, constant_infos);
+                // 将属性对象传入属性表数组
+                attribute_infos[i] = attribute_info;
+            }
+        }
+        return attribute_infos;
+    }
+```
+
+#### 利用继承加反射实现统一格式输出
+
+看过成果展示的朋友，会不会好奇，解析结果中的输出格式是怎么样的，具体是如何实现的
+
+[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)
+
+```
+--------Begin Constant Pool--------
+constant_pool_count: 38(0x0026)
+[1] Constant_Methodref_Info(0x0a00070018)
+tag: [10(0x0a)]
+class_index: [7(0x0007)]
+valueof_class_index: [Constant_Class_Info(0x07001f), tag: [7(0x07)], name_index: [31(0x001f)], valueof_name_index: [Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374), tag: [1(0x01)], length_string: [16(0x0010)], value_string: [java/lang/Object(0x6a6176612f6c616e672f4f626a656374)]]]
+name_and_type_index: [24(0x0018)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c000a000b), tag: [12(0x0c)], name_index: [10(0x000a)], valueof_name_index: [Constant_Utf8_Info(0x0100063c696e69743e), tag: [1(0x01)], length_string: [6(0x0006)], value_string: [<init>(0x3c696e69743e)]], descriptor_index: [11(0x000b)], valueof_descriptor_index: [Constant_Utf8_Info(0x010003282956), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [()V(0x282956)]]]
+...
+
+--------Begin Class & Interfaces--------
+[this_class] Class_Interface_Info(0x0003)
+class_index: [3(0x0003)]
+valueof_class_index: [Constant_Class_Info(0x07001a), tag: [7(0x07)], name_index: [26(0x001a)], valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f30), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo0(0x636c61737366696c652f436c61737346696c6544656d6f30)]]]
+valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f30), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo0(0x636c61737366696c652f436c61737346696c6544656d6f30)]]
+...
+
+--------Begin Fields--------
+fields_count: 1(0x0001)
+[0] Field_Info(0x0000000800090000)
+access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
+name_index: [8(0x0008)]
+valueof_name_index: [Constant_Utf8_Info(0x01000161), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [a(0x61)]]
+descriptor_index: [9(0x0009)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+attributes_count: [0(0x0000)]
+attributes: []
+--------End Fields--------
+...
+```
+
+仔细观察的朋友，应该能看出一点规律，对于一个变量T t，它的输出规则是**KEY: [VALUE]**
+
+其中VALUE分几种情况
+- 如果它是U1、U2、U4、U8 或者 UString，则**VALUE = value(parseBytesToHexString())**
+```java
+    public String toString() {
+        return value + "(" + parseBytesToHexString() + ")";
+    }
+```
+- 剩下的情况，都是Table类的子类，按照toString()格式输出
+```java
+    /**
+     * 按照特有的格式返回<br>
+     * 注意：派生类调用toString()方法时，会自动调用该方法，此时this指向的是派生类的对象，非本类的对象
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+```
+- 对于Constant_Info类与Attribute_Info类要特殊一些，与Table类的toString()类似
+```java
+public abstract class Constant_Info extends Table {
+    /**
+     * 对tag进行特殊处理
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append("\n").append("tag: [").append(tag).append("]");
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+}
+```
+```java
+public abstract class Attribute_Info extends Table {
+    /**
+     * 对name_index、valueof_name_index、length进行特殊处理
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append("\n").append("name_index: [").append(name_index).append("]");
+        sb.append("\n").append("valueof_name_index: [").append(valueof_name_index).append("]");
+        sb.append("\n").append("length: [").append(length).append("]");
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+}
+```
+
+下面我们来重点说一下Table类的toString()方法
+
+[Table.java#L120](src/main/java/model/Table.java#L120)
+
+```java
+public abstract class Table extends Unsigned {
+...
+    /**
+     * 按照特有的格式返回<br>
+     * 注意：派生类调用toString()方法时，会自动调用该方法，此时this指向的是派生类的对象，非本类的对象
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+
+    /**
+     * 返回类名 及 bytes数组的十六进制字符串
+     * @return
+     */
+    protected String toStringClass() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getClass().getSimpleName());
+        sb.append("(").append(this.parseBytesToHexString()).append(")");
+        return sb.toString();
+    }
+
+    /**
+     * 枚举this对象的全部字段（不包括父类的），以特殊格式返回
+     * @return
+     */
+    protected String toStringDeclaredFields() {
+        StringBuilder sb = new StringBuilder();
+        Field[] fields = this.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            try {
+                field.setAccessible(true);
+                sb.append("\n").append(field.getName()).append(": [");
+                sb.append(toStringDeclaredObject(field.get(this))).append("]");
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return sb.toString();
+    }
+
+    /**
+     * 若对象非数组类型，以name: [value1, value2]的格式返回<br>
+     * 若对象是数组类型，递归枚举每个元素，直到不是数组类型时，以name: [[value1], [value2]]的格式返回
+     * @param obj
+     * @return
+     */
+    private String toStringDeclaredObject(Object obj) {
+        StringBuilder sb = new StringBuilder();
+        if (obj != null) {
+            if (obj.getClass().isArray()) {
+                for (int i = 0; i < Array.getLength(obj); i ++) {
+                    if (i != 0) sb.append(", ");
+                    sb.append("[").append(toStringDeclaredObject(Array.get(obj, i))).append("]");
+                }
+            } else
+                sb.append(obj.toString().replaceAll("\n", ", "));
+        }
+        return sb.toString();
+    }
+}
+```
+
+可以看到toString方法实际上是分成了两个方法：toStringClass、toStringDeclaredFields
+
+toStringClass方法，**VALUE = ClassSimpleName(parseBytesToHexString())**
+
+toStringDeclaredFields方法，利用了反射的机制，获取this对象的DeclaredFields
+
+枚举每个Field，**VALUE = FieldName: [VALUE(Field)]"**
+
+VALUE(Field) 由 toStringDeclaredObject方法来解决，它会这么做
+- 前提，obj非空
+- 判断，obj是不是属于数组对象，obj.getClass().isArray()
+- 若属于数组对象，获取数组的长度，枚举每一个元素，递归的调用toStringDeclaredObject方法
+- 若非数组对象，按照toString()方法返回
+
+可以看出来，实际上toString()的逻辑，与虚拟机对类文件数据类型的规范是对应的
+
+我们再来看一下类文件的数据类型规范
+- 类文件中数据只有两种：无符号数、表
+- 无符号数有4种，分别是u1、u2、u4、u8，表示4种字节
+- 表示由无符号数或者表生成的复合数据类型
+- Class文件也是一张表
+
+类似的，toString()的逻辑
+- 类文件中数据只有两种：无符号数、表
+- 类文件中每个数据都以**KEY: [VALUE]** 格式返回
+- 无符号数有4种，分别是u1、u2、u4、u8，分别按照**VALUE = value(parseBytesToHexString())** 格式返回
+- 表示由无符号数或者表生成的复合数据类型
+- 枚举表的每个字段，若是数组对象，枚举数组的每个元素递归处理，否则，按照tostring()返回
+- Class文件特殊处理
+
+对于倒数第二点，表是一定含有具体字段的，按照tostring()返回，实际上是在嵌套地处理，最终一定会走到一个无符号数，按照**VALUE = value(parseBytesToHexString())** 格式返回
+
+上面用到了“嵌套”两个字，我们在输出结果当中，可以看到大量“嵌套”的例子，比如如下
+
+[ResultClassFileDemo1.txt#L1729](src/main/resources/classfile/ResultClassFileDemo1.txt#L1729)
+
+```
+[20] Field_Info(0x00100091008d0001009200000002009303000003db)
+access_flag: [Field_Access_Flag(0x0010), value: [16(0x0010)], FLAGs: [[ACC_FINAL]]]
+name_index: [145(0x0091)]
+valueof_name_index: [Constant_Utf8_Info(0x010004696e7435), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [int5(0x696e7435)]]
+descriptor_index: [141(0x008d)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+attributes_count: [1(0x0001)]
+attributes: [[Attribute_ConstantValue(0x009200000002009303000003db), name_index: [146(0x0092)], valueof_name_index: [Constant_Utf8_Info(0x01000d436f6e7374616e7456616c7565), tag: [1(0x01)], length_string: [13(0x000d)], value_string: [ConstantValue(0x436f6e7374616e7456616c7565)]], length: [2(0x00000002)], constant_index: [147(0x0093)], valueof_constant_index: [Constant_Integer_Info(0x03000003db), tag: [3(0x03)], value: [987(0x000003db)]], constant_value_clazzs: [[class model.Constant_Long_Info], [class model.Constant_Float_Info], [class model.Constant_Double_Info], [class model.Constant_Integer_Info], [class model.Constant_String_Info]]]]
+```
