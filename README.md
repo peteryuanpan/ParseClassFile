@@ -1019,6 +1019,8 @@ VALUE(Field) 由 toStringDeclaredObject方法来解决，它会这么做
 
 上面用到了“嵌套”两个字，我们在输出结果当中，可以看到大量“嵌套”的例子，比如如下
 
+[ResultClassFileDemo1.txt#L1729](src/main/resources/classfile/ResultClassFileDemo1.txt#L1729)
+
 ```
 [20] Field_Info(0x00100091008d0001009200000002009303000003db)
 access_flag: [Field_Access_Flag(0x0010), value: [16(0x0010)], FLAGs: [[ACC_FINAL]]]
