@@ -42,11 +42,10 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 
 |类文件|源文件|解析结果|说明|
 |--|--|--|--|
-|[VerySimpleClassFile.java](src/main/resources/classfile/VerySimpleClassFile.java)|[VerySimpleClassFile.class](src/main/resources/classfile/VerySimpleClassFile.class)|[ResultVerySimpleClassFile.txt](src/main/resources/classfile/ResultVerySimpleClassFile.txt)|最简单的一个类|
-|[ClassFileDemo0.class](src/main/resources/classfile/ClassFileDemo0.class)|[ClassFileDemo0.java](src/main/resources/classfile/ClassFileDemo0.java)|[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)||
-|[ClassFileDemo1.class](src/main/resources/classfile/ClassFileDemo1.class)|[ClassFileDemo1.java](src/main/resources/classfile/ClassFileDemo1.java)|[ResultClassFileDemo1.txt](src/main/resources/classfile/ResultClassFileDemo1.txt)||
-|[ClassFileDemo2.class](src/main/resources/classfile/ClassFileDemo2.class)|[ClassFileDemo2.java](src/main/resources/classfile/ClassFileDemo2.java)|[ResultClassFileDemo2.txt](src/main/resources/classfile/ResultClassFileDemo2.txt)||
 |[Object.class](src/main/resources/classfile/Object.class)|[Object.java](src/main/resources/classfile/Object.java)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)|JDK中最常用的类，java.lang.Object|
+|[VerySimpleClassFile.java](src/main/resources/classfile/VerySimpleClassFile.java)|[VerySimpleClassFile.class](src/main/resources/classfile/VerySimpleClassFile.class)|[ResultVerySimpleClassFile.txt](src/main/resources/classfile/ResultVerySimpleClassFile.txt)|最简单的一个类|
+|[VeryUsefulClassFile.class](src/main/resources/classfile/VeryUsefulClassFile.class)|[VeryUsefulClassFile.java](src/main/resources/classfile/VeryUsefulClassFile.java)|[ResultVeryUsefulClassFile.txt](src/main/resources/classfile/ResultVeryUsefulClassFile.txt)||
+|[TryCatchExceptionDemo.class](src/main/resources/classfile/TryCatchExceptionDemo.class)|[TryCatchExceptionDemo.java](src/main/resources/classfile/TryCatchExceptionDemo.java)|[ResultTryCatchExceptionDemo.txt](src/main/resources/classfile/ResultTryCatchExceptionDemo.txt)||
 
 ### 浅析类文件结构
 
@@ -55,58 +54,27 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 ```java
 package classfile;
 
-public class ClassFileDemo0 {
-
-    int a = 0;
-
-    public static void main(String[] args) {
-        ClassFileDemo0 demo = new ClassFileDemo0();
-        System.out.println(demo.a);
-    }
+public class VerySimpleClassFile {
 }
 ```
 
 它的class文件用sublimeText打开是这样的
 
 ```
-cafe babe 0000 0034 0026 0a00 0700 1809
-0003 0019 0700 1a0a 0003 0018 0900 1b00
-1c0a 001d 001e 0700 1f01 0001 6101 0001
-4901 0006 3c69 6e69 743e 0100 0328 2956
-0100 0443 6f64 6501 000f 4c69 6e65 4e75
-6d62 6572 5461 626c 6501 0012 4c6f 6361
-6c56 6172 6961 626c 6554 6162 6c65 0100
-0474 6869 7301 001a 4c63 6c61 7373 6669
-6c65 2f43 6c61 7373 4669 6c65 4465 6d6f
-303b 0100 046d 6169 6e01 0016 285b 4c6a
-6176 612f 6c61 6e67 2f53 7472 696e 673b
-2956 0100 0461 7267 7301 0013 5b4c 6a61
-7661 2f6c 616e 672f 5374 7269 6e67 3b01
-0004 6465 6d6f 0100 0a53 6f75 7263 6546
-696c 6501 0013 436c 6173 7346 696c 6544
-656d 6f30 2e6a 6176 610c 000a 000b 0c00
-0800 0901 0018 636c 6173 7366 696c 652f
-436c 6173 7346 696c 6544 656d 6f30 0700
-200c 0021 0022 0700 230c 0024 0025 0100
-106a 6176 612f 6c61 6e67 2f4f 626a 6563
-7401 0010 6a61 7661 2f6c 616e 672f 5379
-7374 656d 0100 036f 7574 0100 154c 6a61
-7661 2f69 6f2f 5072 696e 7453 7472 6561
-6d3b 0100 136a 6176 612f 696f 2f50 7269
-6e74 5374 7265 616d 0100 0770 7269 6e74
-6c6e 0100 0428 4929 5600 2100 0300 0700
-0000 0100 0000 0800 0900 0000 0200 0100
-0a00 0b00 0100 0c00 0000 3800 0200 0100
-0000 0a2a b700 012a 03b5 0002 b100 0000
-0200 0d00 0000 0a00 0200 0000 0300 0400
-0500 0e00 0000 0c00 0100 0000 0a00 0f00
-1000 0000 0900 1100 1200 0100 0c00 0000
-4f00 0200 0200 0000 13bb 0003 59b7 0004
-4cb2 0005 2bb4 0002 b600 06b1 0000 0002
-000d 0000 000e 0003 0000 0008 0008 0009
-0012 000a 000e 0000 0016 0002 0000 0013
-0013 0014 0000 0008 000b 0015 0010 0001
-0001 0016 0000 0002 0017 
+cafe babe 0000 0034 000d 0a00 0300 0a07
+000b 0700 0c01 0006 3c69 6e69 743e 0100
+0328 2956 0100 0443 6f64 6501 000f 4c69
+6e65 4e75 6d62 6572 5461 626c 6501 000a
+536f 7572 6365 4669 6c65 0100 1856 6572
+7953 696d 706c 6543 6c61 7373 4669 6c65
+2e6a 6176 610c 0004 0005 0100 1d63 6c61
+7373 6669 6c65 2f56 6572 7953 696d 706c
+6543 6c61 7373 4669 6c65 0100 106a 6176
+612f 6c61 6e67 2f4f 626a 6563 7400 2100
+0200 0300 0000 0000 0100 0100 0400 0500
+0100 0600 0000 1d00 0100 0100 0000 052a
+b700 01b1 0000 0001 0007 0000 0006 0001
+0000 0003 0001 0008 0000 0002 0009 
 ```
 
 引用自《深入理解JAVA虚拟机》第二版6.3节
