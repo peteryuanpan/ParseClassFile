@@ -16,7 +16,7 @@ public class Attribute_ConstantValue extends Attribute_Info {
     // Constant_String_Info
     private Constant_Info valueof_constant_index;
 
-    static final Class[] constant_value_clazzs = new Class[5];
+    private static final Class[] constant_value_clazzs = new Class[5];
     static {
         constant_value_clazzs[0] = Constant_Long_Info.class;
         constant_value_clazzs[1] = Constant_Float_Info.class;

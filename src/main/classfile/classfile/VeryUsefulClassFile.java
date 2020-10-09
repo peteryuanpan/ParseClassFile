@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Orange(getName = "3333",getValue = "4444")
-public class ClassFileDemo1 implements Interface1, Interface2, Interface3 {
+public class VeryUsefulClassFile implements Interface1, Interface2, Interface3 {
 
     boolean boolean1 = false;
     boolean boolean2 = true;
@@ -63,7 +63,7 @@ public class ClassFileDemo1 implements Interface1, Interface2, Interface3 {
     int interface1_aaa1 = interface1.aaa(1);
     public double interface1_bbb1 = interface1.bbb();
 
-    public ClassFileDemo1() throws InterruptedException {
+    public VeryUsefulClassFile() throws InterruptedException {
         Thread.sleep(100);
         try {
             Thread.sleep(200);
@@ -82,6 +82,8 @@ public class ClassFileDemo1 implements Interface1, Interface2, Interface3 {
     }
 
     public static void main(String[] args) {
+        Runnable x = () -> {
+        };
     }
 
     static class SubClass1 {
@@ -91,8 +93,6 @@ public class ClassFileDemo1 implements Interface1, Interface2, Interface3 {
     class SubClass2 {
         int b;
     }
-
-
 }
 
 interface Interface1 {

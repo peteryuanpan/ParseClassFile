@@ -26,10 +26,6 @@ public class ParseClassFileAndWrite {
     }
 
     public static void main(String[] args) {
-        parse_write(Constants.CLASS_FILE_PATH_0);
-        parse_write(Constants.CLASS_FILE_PATH_1);
-        parse_write(Constants.CLASS_FILE_PATH_2);
-        parse_write(Constants.JAVA_LANG_OBJECT_CLASS_FILE_PATH);
-        parse_write(Constants.VERY_SIMPLE_CLASS_FILE_PATH);
+        parse_write(Constants.TRY_CATCH_EXCEPTION_DEMO);
     }
 }

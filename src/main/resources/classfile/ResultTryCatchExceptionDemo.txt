@@ -1,4 +1,4 @@
---------Begin Parse Class File C:\Users\Admin\Desktop\plan\2020\ParseClassFile\src\main\resources\classfile\ClassFileDemo2.class--------
+--------Begin Parse Class File C:\Users\Admin\Desktop\plan\2020\ParseClassFile\src\main\resources\classfile\classfile.TryCatchExceptionDemo.class--------
 --------Begin Magic--------
 magic: 0xcafebabe
 --------End Magic--------
@@ -57,21 +57,21 @@ valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00530054), tag: [12(
 [10] Constant_Class_Info(0x070045)
 tag: [7(0x07)]
 name_index: [69(0x0045)]
-valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f436c61737346696c6544656d6f32245431), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/ClassFileDemo2$T1(0x636c61737366696c652f436c61737346696c6544656d6f32245431)]]
+valueof_name_index: [Constant_Utf8_Info(0x010022636c61737366696c652f5472794361746368457863657074696f6e44656d6f245431), tag: [1(0x01)], length_string: [34(0x0022)], value_string: [classfile/classfile.TryCatchExceptionDemo$T1(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f245431)]]
 [11] Constant_Methodref_Info(0x0a000a0046)
 tag: [10(0x0a)]
 class_index: [10(0x000a)]
-valueof_class_index: [Constant_Class_Info(0x070045), tag: [7(0x07)], name_index: [69(0x0045)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f436c61737346696c6544656d6f32245431), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/ClassFileDemo2$T1(0x636c61737366696c652f436c61737346696c6544656d6f32245431)]]]
+valueof_class_index: [Constant_Class_Info(0x070045), tag: [7(0x07)], name_index: [69(0x0045)], valueof_name_index: [Constant_Utf8_Info(0x010022636c61737366696c652f5472794361746368457863657074696f6e44656d6f245431), tag: [1(0x01)], length_string: [34(0x0022)], value_string: [classfile/classfile.TryCatchExceptionDemo$T1(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f245431)]]]
 name_and_type_index: [70(0x0046)]
 valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00140055), tag: [12(0x0c)], name_index: [20(0x0014)], valueof_name_index: [Constant_Utf8_Info(0x0100063c696e69743e), tag: [1(0x01)], length_string: [6(0x0006)], value_string: [<init>(0x3c696e69743e)]], descriptor_index: [85(0x0055)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000428492956), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [(I)V(0x28492956)]]]
 [12] Constant_Class_Info(0x070047)
 tag: [7(0x07)]
 name_index: [71(0x0047)]
-valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f32), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo2(0x636c61737366696c652f436c61737346696c6544656d6f32)]]
+valueof_name_index: [Constant_Utf8_Info(0x01001f636c61737366696c652f5472794361746368457863657074696f6e44656d6f), tag: [1(0x01)], length_string: [31(0x001f)], value_string: [classfile/classfile.TryCatchExceptionDemo(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f)]]
 [13] Constant_Methodref_Info(0x0a000c003b)
 tag: [10(0x0a)]
 class_index: [12(0x000c)]
-valueof_class_index: [Constant_Class_Info(0x070047), tag: [7(0x07)], name_index: [71(0x0047)], valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f32), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo2(0x636c61737366696c652f436c61737346696c6544656d6f32)]]]
+valueof_class_index: [Constant_Class_Info(0x070047), tag: [7(0x07)], name_index: [71(0x0047)], valueof_name_index: [Constant_Utf8_Info(0x01001f636c61737366696c652f5472794361746368457863657074696f6e44656d6f), tag: [1(0x01)], length_string: [31(0x001f)], value_string: [classfile/classfile.TryCatchExceptionDemo(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f)]]]
 name_and_type_index: [59(0x003b)]
 valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00140015), tag: [12(0x0c)], name_index: [20(0x0014)], valueof_name_index: [Constant_Utf8_Info(0x0100063c696e69743e), tag: [1(0x01)], length_string: [6(0x0006)], value_string: [<init>(0x3c696e69743e)]], descriptor_index: [21(0x0015)], valueof_descriptor_index: [Constant_Utf8_Info(0x010003282956), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [()V(0x282956)]]]
 [14] Constant_Fieldref_Info(0x0900480049)
@@ -83,7 +83,7 @@ valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00570058), tag: [12(
 [15] Constant_Methodref_Info(0x0a000c004a)
 tag: [10(0x0a)]
 class_index: [12(0x000c)]
-valueof_class_index: [Constant_Class_Info(0x070047), tag: [7(0x07)], name_index: [71(0x0047)], valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f32), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo2(0x636c61737366696c652f436c61737346696c6544656d6f32)]]]
+valueof_class_index: [Constant_Class_Info(0x070047), tag: [7(0x07)], name_index: [71(0x0047)], valueof_name_index: [Constant_Utf8_Info(0x01001f636c61737366696c652f5472794361746368457863657074696f6e44656d6f), tag: [1(0x01)], length_string: [31(0x001f)], value_string: [classfile/classfile.TryCatchExceptionDemo(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f)]]]
 name_and_type_index: [74(0x004a)]
 valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00270028), tag: [12(0x0c)], name_index: [39(0x0027)], valueof_name_index: [Constant_Utf8_Info(0x0100057465737433), tag: [1(0x01)], length_string: [5(0x0005)], value_string: [test3(0x7465737433)]], descriptor_index: [40(0x0028)], valueof_descriptor_index: [Constant_Utf8_Info(0x01001228294c6a6176612f7574696c2f4c6973743b), tag: [1(0x01)], length_string: [18(0x0012)], value_string: [()Ljava/util/List;(0x28294c6a6176612f7574696c2f4c6973743b)]]]
 [16] Constant_Methodref_Info(0x0a004b004c)
@@ -128,10 +128,10 @@ value_string: [LocalVariableTable(0x4c6f63616c5661726961626c655461626c65)]
 tag: [1(0x01)]
 length_string: [4(0x0004)]
 value_string: [this(0x74686973)]
-[26] Constant_Utf8_Info(0x01001a4c636c61737366696c652f436c61737346696c6544656d6f323b)
+[26] Constant_Utf8_Info(0x0100214c636c61737366696c652f5472794361746368457863657074696f6e44656d6f3b)
 tag: [1(0x01)]
-length_string: [26(0x001a)]
-value_string: [Lclassfile/ClassFileDemo2;(0x4c636c61737366696c652f436c61737346696c6544656d6f323b)]
+length_string: [33(0x0021)]
+value_string: [Lclassfile/classfile.TryCatchExceptionDemo;(0x4c636c61737366696c652f5472794361746368457863657074696f6e44656d6f3b)]
 [27] Constant_Utf8_Info(0x0100057465737431)
 tag: [1(0x01)]
 length_string: [5(0x0005)]
@@ -203,7 +203,7 @@ value_string: [Ljava/util/List<Ljava/lang/Integer;>;(0x4c6a6176612f7574696c2f4c6
 [44] Constant_Class_Info(0x070047)
 tag: [7(0x07)]
 name_index: [71(0x0047)]
-valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f32), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo2(0x636c61737366696c652f436c61737346696c6544656d6f32)]]
+valueof_name_index: [Constant_Utf8_Info(0x01001f636c61737366696c652f5472794361746368457863657074696f6e44656d6f), tag: [1(0x01)], length_string: [31(0x001f)], value_string: [classfile/classfile.TryCatchExceptionDemo(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f)]]
 [45] Constant_Class_Info(0x07004f)
 tag: [7(0x07)]
 name_index: [79(0x004f)]
@@ -220,18 +220,18 @@ value_string: [()Ljava/util/List<Ljava/lang/Integer;>;(0x28294c6a6176612f7574696
 tag: [1(0x01)]
 length_string: [5(0x0005)]
 value_string: [test4(0x7465737434)]
-[49] Constant_Utf8_Info(0x01001f28294c636c61737366696c652f436c61737346696c6544656d6f322454313b)
+[49] Constant_Utf8_Info(0x01002628294c636c61737366696c652f5472794361746368457863657074696f6e44656d6f2454313b)
 tag: [1(0x01)]
-length_string: [31(0x001f)]
-value_string: [()Lclassfile/ClassFileDemo2$T1;(0x28294c636c61737366696c652f436c61737346696c6544656d6f322454313b)]
+length_string: [38(0x0026)]
+value_string: [()Lclassfile/classfile.TryCatchExceptionDemo$T1;(0x28294c636c61737366696c652f5472794361746368457863657074696f6e44656d6f2454313b)]
 [50] Constant_Utf8_Info(0x01000174)
 tag: [1(0x01)]
 length_string: [1(0x0001)]
 value_string: [t(0x74)]
-[51] Constant_Utf8_Info(0x01001d4c636c61737366696c652f436c61737346696c6544656d6f322454313b)
+[51] Constant_Utf8_Info(0x0100244c636c61737366696c652f5472794361746368457863657074696f6e44656d6f2454313b)
 tag: [1(0x01)]
-length_string: [29(0x001d)]
-value_string: [Lclassfile/ClassFileDemo2$T1;(0x4c636c61737366696c652f436c61737346696c6544656d6f322454313b)]
+length_string: [36(0x0024)]
+value_string: [Lclassfile/classfile.TryCatchExceptionDemo$T1;(0x4c636c61737366696c652f5472794361746368457863657074696f6e44656d6f2454313b)]
 [52] Constant_Utf8_Info(0x0100046d61696e)
 tag: [1(0x01)]
 length_string: [4(0x0004)]
@@ -256,10 +256,10 @@ value_string: [a(0x61)]
 tag: [1(0x01)]
 length_string: [10(0x000a)]
 value_string: [SourceFile(0x536f7572636546696c65)]
-[58] Constant_Utf8_Info(0x010013436c61737346696c6544656d6f322e6a617661)
+[58] Constant_Utf8_Info(0x01001a5472794361746368457863657074696f6e44656d6f2e6a617661)
 tag: [1(0x01)]
-length_string: [19(0x0013)]
-value_string: [ClassFileDemo2.java(0x436c61737346696c6544656d6f322e6a617661)]
+length_string: [26(0x001a)]
+value_string: [classfile.TryCatchExceptionDemo.java(0x5472794361746368457863657074696f6e44656d6f2e6a617661)]
 [59] Constant_NameAndType_Info(0x0c00140015)
 tag: [12(0x0c)]
 name_index: [20(0x0014)]
@@ -306,20 +306,20 @@ name_index: [83(0x0053)]
 valueof_name_index: [Constant_Utf8_Info(0x010003616464), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [add(0x616464)]]
 descriptor_index: [84(0x0054)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x010015284c6a6176612f6c616e672f4f626a6563743b295a), tag: [1(0x01)], length_string: [21(0x0015)], value_string: [(Ljava/lang/Object;)Z(0x284c6a6176612f6c616e672f4f626a6563743b295a)]]
-[69] Constant_Utf8_Info(0x01001b636c61737366696c652f436c61737346696c6544656d6f32245431)
+[69] Constant_Utf8_Info(0x010022636c61737366696c652f5472794361746368457863657074696f6e44656d6f245431)
 tag: [1(0x01)]
-length_string: [27(0x001b)]
-value_string: [classfile/ClassFileDemo2$T1(0x636c61737366696c652f436c61737346696c6544656d6f32245431)]
+length_string: [34(0x0022)]
+value_string: [classfile/classfile.TryCatchExceptionDemo$T1(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f245431)]
 [70] Constant_NameAndType_Info(0x0c00140055)
 tag: [12(0x0c)]
 name_index: [20(0x0014)]
 valueof_name_index: [Constant_Utf8_Info(0x0100063c696e69743e), tag: [1(0x01)], length_string: [6(0x0006)], value_string: [<init>(0x3c696e69743e)]]
 descriptor_index: [85(0x0055)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000428492956), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [(I)V(0x28492956)]]
-[71] Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f32)
+[71] Constant_Utf8_Info(0x01001f636c61737366696c652f5472794361746368457863657074696f6e44656d6f)
 tag: [1(0x01)]
-length_string: [24(0x0018)]
-value_string: [classfile/ClassFileDemo2(0x636c61737366696c652f436c61737346696c6544656d6f32)]
+length_string: [31(0x001f)]
+value_string: [classfile/classfile.TryCatchExceptionDemo(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f)]
 [72] Constant_Class_Info(0x070056)
 tag: [7(0x07)]
 name_index: [86(0x0056)]
@@ -417,8 +417,8 @@ FLAGs: [[ACC_PUBLIC], [ACC_SUPER]]
 --------Begin Class & Interfaces--------
 [this_class] Class_Interface_Info(0x000c)
 class_index: [12(0x000c)]
-valueof_class_index: [Constant_Class_Info(0x070047), tag: [7(0x07)], name_index: [71(0x0047)], valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f32), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo2(0x636c61737366696c652f436c61737346696c6544656d6f32)]]]
-valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f32), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo2(0x636c61737366696c652f436c61737346696c6544656d6f32)]]
+valueof_class_index: [Constant_Class_Info(0x070047), tag: [7(0x07)], name_index: [71(0x0047)], valueof_name_index: [Constant_Utf8_Info(0x01001f636c61737366696c652f5472794361746368457863657074696f6e44656d6f), tag: [1(0x01)], length_string: [31(0x001f)], value_string: [classfile/classfile.TryCatchExceptionDemo(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f)]]]
+valueof_name_index: [Constant_Utf8_Info(0x01001f636c61737366696c652f5472794361746368457863657074696f6e44656d6f), tag: [1(0x01)], length_string: [31(0x001f)], value_string: [classfile/classfile.TryCatchExceptionDemo(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f)]]
 
 [super_class] Class_Interface_Info(0x0011)
 class_index: [17(0x0011)]
@@ -471,7 +471,7 @@ access_flag: [Method_Access_Flag(0x0001), value: [1(0x0001)], FLAGs: [[ACC_PUBLI
 name_index: [48(0x0030)]
 valueof_name_index: [Constant_Utf8_Info(0x0100057465737434), tag: [1(0x01)], length_string: [5(0x0005)], value_string: [test4(0x7465737434)]]
 descriptor_index: [49(0x0031)]
-valueof_descriptor_index: [Constant_Utf8_Info(0x01001f28294c636c61737366696c652f436c61737346696c6544656d6f322454313b), tag: [1(0x01)], length_string: [31(0x001f)], value_string: [()Lclassfile/ClassFileDemo2$T1;(0x28294c636c61737366696c652f436c61737346696c6544656d6f322454313b)]]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01002628294c636c61737366696c652f5472794361746368457863657074696f6e44656d6f2454313b), tag: [1(0x01)], length_string: [38(0x0026)], value_string: [()Lclassfile/classfile.TryCatchExceptionDemo$T1;(0x28294c636c61737366696c652f5472794361746368457863657074696f6e44656d6f2454313b)]]
 attributes_count: [1(0x0001)]
 attributes: [[Attribute_Code(0x0016000000e5000300050000003bbb000a5904b7000b4c2b4dbb000a5906b7000b4c2cb04dbb000a5905b7000b4c2b4ebb000a5906b7000b4c2db03a04bb000a5906b7000b4c1904bf00040000000b001600020000000b002d000000160022002d0000002d002f002d0000000300170000002e000b0000003f00090040000b00450014004000160041001700420020004300220045002b0043002d00450038004700180000003400050009000d00320033000100170016001f002000020020000d0032003300010000003b0019001a00000038000300320033000100210000000a00025607002256070023), name_index: [22(0x0016)], valueof_name_index: [Constant_Utf8_Info(0x010004436f6465), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [Code(0x436f6465)]], length: [229(0x000000e5)], max_statck: [3(0x0003)], max_locals: [5(0x0005)], code_length: [59(0x0000003b)], code: [ByteCode(0xbb000a5904b7000b4c2b4dbb000a5906b7000b4c2cb04dbb000a5905b7000b4c2b4ebb000a5906b7000b4c2db03a04bb000a5906b7000b4c1904bf), length: [59], value: []], exception_table_length: [4(0x0004)], exception_table: [[Exception_Info(0x0000000b00160002), start_pc: [0(0x0000)], end_pc: [11(0x000b)], handler_pc: [22(0x0016)], catch_type: [2(0x0002)]], [Exception_Info(0x0000000b002d0000), start_pc: [0(0x0000)], end_pc: [11(0x000b)], handler_pc: [45(0x002d)], catch_type: [0(0x0000)]], [Exception_Info(0x00160022002d0000), start_pc: [22(0x0016)], end_pc: [34(0x0022)], handler_pc: [45(0x002d)], catch_type: [0(0x0000)]], [Exception_Info(0x002d002f002d0000), start_pc: [45(0x002d)], end_pc: [47(0x002f)], handler_pc: [45(0x002d)], catch_type: [0(0x0000)]]], attributes_count: [3(0x0003)], attributes: [[Attribute_LineNumberTable(0x00170000002e000b0000003f00090040000b00450014004000160041001700420020004300220045002b0043002d004500380047), name_index: [23(0x0017)], valueof_name_index: [Constant_Utf8_Info(0x01000f4c696e654e756d6265725461626c65), tag: [1(0x01)], length_string: [15(0x000f)], value_string: [LineNumberTable(0x4c696e654e756d6265725461626c65)]], length: [46(0x0000002e)], table_length: [11(0x000b)], table: [[Line_Number_Info(0x0000003f), start_pc: [0(0x0000)], line_number: [63(0x003f)]], [Line_Number_Info(0x00090040), start_pc: [9(0x0009)], line_number: [64(0x0040)]], [Line_Number_Info(0x000b0045), start_pc: [11(0x000b)], line_number: [69(0x0045)]], [Line_Number_Info(0x00140040), start_pc: [20(0x0014)], line_number: [64(0x0040)]], [Line_Number_Info(0x00160041), start_pc: [22(0x0016)], line_number: [65(0x0041)]], [Line_Number_Info(0x00170042), start_pc: [23(0x0017)], line_number: [66(0x0042)]], [Line_Number_Info(0x00200043), start_pc: [32(0x0020)], line_number: [67(0x0043)]], [Line_Number_Info(0x00220045), start_pc: [34(0x0022)], line_number: [69(0x0045)]], [Line_Number_Info(0x002b0043), start_pc: [43(0x002b)], line_number: [67(0x0043)]], [Line_Number_Info(0x002d0045), start_pc: [45(0x002d)], line_number: [69(0x0045)]], [Line_Number_Info(0x00380047), start_pc: [56(0x0038)], line_number: [71(0x0047)]]]], [Attribute_LocalVariableTable(0x00180000003400050009000d00320033000100170016001f002000020020000d0032003300010000003b0019001a000000380003003200330001), name_index: [24(0x0018)], valueof_name_index: [Constant_Utf8_Info(0x0100124c6f63616c5661726961626c655461626c65), tag: [1(0x01)], length_string: [18(0x0012)], value_string: [LocalVariableTable(0x4c6f63616c5661726961626c655461626c65)]], length: [52(0x00000034)], table_length: [5(0x0005)], table: [[Local_Variable_Info(0x0009000d003200330001), start_pc: [9(0x0009)], length: [13(0x000d)], name_index: [50(0x0032)], descriptor_index: [51(0x0033)], index: [1(0x0001)]], [Local_Variable_Info(0x00170016001f00200002), start_pc: [23(0x0017)], length: [22(0x0016)], name_index: [31(0x001f)], descriptor_index: [32(0x0020)], index: [2(0x0002)]], [Local_Variable_Info(0x0020000d003200330001), start_pc: [32(0x0020)], length: [13(0x000d)], name_index: [50(0x0032)], descriptor_index: [51(0x0033)], index: [1(0x0001)]], [Local_Variable_Info(0x0000003b0019001a0000), start_pc: [0(0x0000)], length: [59(0x003b)], name_index: [25(0x0019)], descriptor_index: [26(0x001a)], index: [0(0x0000)]], [Local_Variable_Info(0x00380003003200330001), start_pc: [56(0x0038)], length: [3(0x0003)], name_index: [50(0x0032)], descriptor_index: [51(0x0033)], index: [1(0x0001)]]]], [Attribute_StackMapTable(0x00210000000a00025607002256070023), name_index: [33(0x0021)], valueof_name_index: [Constant_Utf8_Info(0x01000d537461636b4d61705461626c65), tag: [1(0x01)], length_string: [13(0x000d)], value_string: [StackMapTable(0x537461636b4d61705461626c65)]], length: [10(0x0000000a)], number_of_entries: [2(0x0002)], stack_map_frame_entries: [Stack_Map_Frame(0x5607002256070023), length: [8]]]]]]
 [5] Method_Info(0x000900340035000100160000004f0002000200000013bb000c59b7000d4cb2000e2bb6000fb60010b10000000200170000000e00030000004b0008004c0012004d0018000000160002000000130036003700000008000b0038001a0001)
@@ -486,7 +486,7 @@ attributes: [[Attribute_Code(0x00160000004f0002000200000013bb000c59b7000d4cb2000
 
 --------Begin Attributes--------
 attributes_count: 2(0x0002)
-[0] Attribute_SourceFile(0x003900000002003a010013436c61737346696c6544656d6f322e6a617661)
+[0] Attribute_SourceFile(0x003900000002003a01001a5472794361746368457863657074696f6e44656d6f2e6a617661)
 name_index: [57(0x0039)]
 valueof_name_index: [Constant_Utf8_Info(0x01000a536f7572636546696c65)
 tag: [1(0x01)]
@@ -494,7 +494,7 @@ length_string: [10(0x000a)]
 value_string: [SourceFile(0x536f7572636546696c65)]]
 length: [2(0x00000002)]
 sourcefile_name_index: [58(0x003a)]
-valueof_sourcefile_name_index: [Constant_Utf8_Info(0x010013436c61737346696c6544656d6f322e6a617661), tag: [1(0x01)], length_string: [19(0x0013)], value_string: [ClassFileDemo2.java(0x436c61737346696c6544656d6f322e6a617661)]]
+valueof_sourcefile_name_index: [Constant_Utf8_Info(0x01001a5472794361746368457863657074696f6e44656d6f2e6a617661), tag: [1(0x01)], length_string: [26(0x001a)], value_string: [classfile.TryCatchExceptionDemo.java(0x5472794361746368457863657074696f6e44656d6f2e6a617661)]]
 [1] Attribute_InnerClasses(0x00130000000a0001000a000c00120008)
 name_index: [19(0x0013)]
 valueof_name_index: [Constant_Utf8_Info(0x01000c496e6e6572436c6173736573)
@@ -503,7 +503,7 @@ length_string: [12(0x000c)]
 value_string: [InnerClasses(0x496e6e6572436c6173736573)]]
 length: [10(0x0000000a)]
 number_of_classes: [1(0x0001)]
-inner_classes: [[Inner_Classes_Info(0x000a000c00120008), inner_class_index: [10(0x000a)], valueof_inner_class_index: [Constant_Class_Info(0x070045), tag: [7(0x07)], name_index: [69(0x0045)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f436c61737346696c6544656d6f32245431), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/ClassFileDemo2$T1(0x636c61737366696c652f436c61737346696c6544656d6f32245431)]]], outer_class_index: [12(0x000c)], valueof_outer_class_index: [Constant_Class_Info(0x070047), tag: [7(0x07)], name_index: [71(0x0047)], valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f32), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo2(0x636c61737366696c652f436c61737346696c6544656d6f32)]]], inner_name_index: [18(0x0012)], valueof_inner_name_index: [Constant_Utf8_Info(0x0100025431), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [T1(0x5431)]], access_flag: [Inner_Class_Access_Flag(0x0008), value: [8(0x0008)], FLAGs: [[ACC_STATIC]]]]]
+inner_classes: [[Inner_Classes_Info(0x000a000c00120008), inner_class_index: [10(0x000a)], valueof_inner_class_index: [Constant_Class_Info(0x070045), tag: [7(0x07)], name_index: [69(0x0045)], valueof_name_index: [Constant_Utf8_Info(0x010022636c61737366696c652f5472794361746368457863657074696f6e44656d6f245431), tag: [1(0x01)], length_string: [34(0x0022)], value_string: [classfile/classfile.TryCatchExceptionDemo$T1(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f245431)]]], outer_class_index: [12(0x000c)], valueof_outer_class_index: [Constant_Class_Info(0x070047), tag: [7(0x07)], name_index: [71(0x0047)], valueof_name_index: [Constant_Utf8_Info(0x01001f636c61737366696c652f5472794361746368457863657074696f6e44656d6f), tag: [1(0x01)], length_string: [31(0x001f)], value_string: [classfile/classfile.TryCatchExceptionDemo(0x636c61737366696c652f5472794361746368457863657074696f6e44656d6f)]]], inner_name_index: [18(0x0012)], valueof_inner_name_index: [Constant_Utf8_Info(0x0100025431), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [T1(0x5431)]], access_flag: [Inner_Class_Access_Flag(0x0008), value: [8(0x0008)], FLAGs: [[ACC_STATIC]]]]]
 --------End Attributes--------
 
---------End Parse Class File C:\Users\Admin\Desktop\plan\2020\ParseClassFile\src\main\resources\classfile\ClassFileDemo2.class--------
+--------End Parse Class File C:\Users\Admin\Desktop\plan\2020\ParseClassFile\src\main\resources\classfile\classfile.TryCatchExceptionDemo.class--------

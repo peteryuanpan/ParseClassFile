@@ -3,7 +3,7 @@ package classfile;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClassFileDemo2 {
+public class TryCatchExceptionDemo {
 
     public int test1() {
         int x;
@@ -72,7 +72,7 @@ public class ClassFileDemo2 {
     }
 
     public static void main(String[] args) {
-        ClassFileDemo2 a = new ClassFileDemo2();
+        TryCatchExceptionDemo a = new TryCatchExceptionDemo();
         System.out.println(a.test3());
     }
 }
