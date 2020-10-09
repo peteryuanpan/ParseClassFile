@@ -641,3 +641,182 @@ public class Class_Access_Flag extends Access_Flag {
 #### Attribute_Info
 
 #### Attribute_Extend
+
+### 关键技术点
+
+#### 利用反射实现常量池实例初始化
+
+小标题可能比较抽象，我以具体例子来说明
+
+就拿常量池来说，注意到在 [ParseClassFile.java#L27](src/main/java/parse/ParseClassFile.java#L27) 中，有一段如下的函数
+
+```java
+    private static Class_File parseConstantPool(Class_File class_file, InputStream is) throws Exception {
+        // 常量池容量计数值
+        U2 constant_pool_count = U2.create(is);
+        class_file.constant_pool_count = constant_pool_count;
+        // 解析每一个常量池项（从1开始，到constant_pool_count-1）
+        Constant_Info[] constant_infos = new Constant_Info[constant_pool_count.getValue()];
+        class_file.constant_infos = constant_infos;
+        // 创建常量池项
+        for (int i = 1; i < constant_pool_count.getValue(); i ++) {
+            // 常量池项的tag
+            U1 tag = U1.create(is);
+
+            Constant_Info.TYPE type = Constant_Info.TYPE.getTYPE(tag.getValue());
+
+            if (type == Constant_Info.TYPE.Constant_Unknow_Info)
+                throw new Exception("Constant_Unknow_Info tag: " + tag.getValue());
+
+            // 利用反射机制获取到类，调用create方法生成Constant_Info的派生类
+            Constant_Info constant_info = (Constant_Info) Class.forName("model." + type.name())
+                    .getMethod("create", InputStream.class, U1.class)
+                    .invoke(null, is, tag);
+
+            // 存入常量池数组
+            constant_infos[i] = constant_info;
+
+            if (type == Constant_Info.TYPE.Constant_Long_Info || type == Constant_Info.TYPE.Constant_Double_Info)
+                constant_infos[++i] = Constant_Large_Numeric_Continued_Info.create(is, null);
+        }
+        // 填充常量池数据
+        for (int i = 1; i < constant_pool_count.getValue(); i ++) {
+            if (constant_infos[i] != null)
+                constant_infos[i].fill(constant_infos);
+        }
+        return class_file;
+    }
+```
+
+Constant_Info类是常量池项的公共父类，Table类是Constant_Info类的父类
+
+parseConstantPool方法中，要做的事情是
+- 读取tag的值
+- 根据tag值查对应哪个Constant_Info
+- 初始化具体Constnat_Info的实例，并存入常量池数组中
+- 给每一个Constant_Info实例填充数据
+
+Constant_Info类有18个子类，如下图
+![image](https://user-images.githubusercontent.com/10209135/95333512-747cd780-08df-11eb-8257-14cafc574ca5.png)
+
+难道我们要每一个子类都写一个create方法语句吗，诸如
+```java
+U1 tag = U1.create(is);
+Constant_Info.TYPE type = Constant_Info.TYPE.getTYPE(tag.getValue());
+switch(type) {
+  case Constant_Class_Info:
+    Constant_Class_Info constant_class_info = Constant_Class_Info.create(is, tag);
+    break;
+  case Constant_Double_Info:
+    Constant_Double_Info constant_double_info = Constant_Double_Info.create(is, tag);
+    break;
+  case Constant_Dynamic_Info:
+    Constant_Dynamic_Info constant_dynamic_info = Constant_Dynamic_Info.create(is, tag);
+    break;
+...写18个case...
+}
+constant_infos[i] = constant_info;
+}
+```
+
+这样肯定是非常不合适的，它不满足设计模式六大原则之一：开闭原则（Open Close Principle）
+
+> 开闭原则的意思是：对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，实现一个热插拔的效果。简言之，是为了使程序的扩展性好，易于维护和升级。
+
+如果后面还有新的Constant_Info类添加进来（对于常量池来说，数量相对有限，但对于Attribute_Info来说，可不一定了），我还要去修改swtich.. case.. 中的代码
+
+如果我中间某个逻辑错了，或者希望添加逻辑（比如create后再干一件事），我需要去添加18行代码...
+
+总之，这样做是很麻烦，不聪明的
+
+取而代之的，使用反射的方法来实现，会比较合适
+
+```java
+// 利用反射机制获取到类，调用create方法生成Constant_Info的派生类
+Constant_Info constant_info = (Constant_Info) Class.forName("model." + type.name())
+        .getMethod("create", InputStream.class, U1.class)
+        .invoke(null, is, tag);
+```
+
+上面这段代码巧妙运用了反射机制，会去加载model.typeName的类
+
+将Constant_Info.TYPE中的每个字段名字与Constant_Info每个子类名设计成一样，且Constant_Info每个子类名都有一个static修饰的create方法，且形参都是InputStream.class及U1.class
+
+比如Constant_Class_Info
+```java
+public class Constant_Class_Info extends Constant_Info {
+    public static Constant_Class_Info create(InputStream is, U1 tag) throws IOException {
+        Constant_Class_Info ci = new Constant_Class_Info();
+        ci.tag = tag;
+        ci.name_index = U2.create(is);
+        ci.newBytes();
+        return ci;
+    }
+}
+```
+
+比如Constant_Double_Info
+```java
+public class Constant_Double_Info extends Constant_Info {
+    public static Constant_Double_Info create(InputStream is, U1 tag) throws IOException {
+        Constant_Double_Info ci = new Constant_Double_Info();
+        ci.tag = tag;
+        ci.value = U8.create(is);
+        ci.newBytes();
+        return ci;
+    }
+}
+```
+
+这样的话，如果有一个新的常量池需要添加，我不需要去修改parseConstantPool中的代码，只需要新增一个Constant_Info的子类，实现好成员字段，静态create方法等即可了
+
+同样的，在Attribute_Info中也有类似的技术
+
+类、字段表、方法表都含有属性表的属性，Attribute_Info中提供一个方法统一实现属性表的创建（逐一读入name_index、length，然后初始化每一个Attribute_对象）
+
+[Attribute_Info.java#L51](src/main/java/model/Attribute_Info.java#L51)
+```java
+    /**
+     * 用于创建属性表，在类、字段表、方法表中都含有属性表，甚至Code属性中也有，因此写到这里并声明为public、static
+     * @param is
+     * @param length_attributes
+     * @param constant_infos
+     * @return
+     * @throws Exception
+     */
+    public static Attribute_Info[] createAttributes(InputStream is, int length_attributes, Constant_Info[] constant_infos) throws Exception {
+        // 创建属性表数组
+        Attribute_Info[] attribute_infos = null;
+        // 属性表size大于0才new，否则为null
+        if (length_attributes > 0) {
+            // 实例化属性表数组
+            attribute_infos = new Attribute_Info[length_attributes];
+            for (int i = 0; i < length_attributes; i ++) {
+                // 属性表结构第一项：name_index，指向常量池中的一个Constant_Utf8_Info，表示属性名
+                U2 name_index = U2.create(is);
+                // 获取属性名的具体值
+                fillForException(name_index, constant_infos, Constant_Utf8_Info.class);
+                Constant_Utf8_Info valueof_name_index = (Constant_Utf8_Info) constant_infos[name_index.getValue()];
+                // 属性表结构第二项：length，表示属性值所占用的字节数
+                U4 length = U4.create(is);
+                // 属性名有很多，比如 Code、Exceptions、ConstantValue、InnerClasses等
+                // 每一个属性类，名字都加上了一个前缀Attribute_，并且属于package model下
+                // 使用反射的方法获取到具体属性类的class对象
+                Class clazz = Class.forName("model.Attribute_" + valueof_name_index.getValueString().getValue());
+                // 每一个派生属性类都应该定义一个create方法，如下
+                // public static create(InputStream is, U2 index_attribute_name, Constant_Utf8_Info value_attribute_name, U4 attribute_length, Constant_Info[] constant_infos)
+                // 通过class对象获取到method
+                Method method = clazz.getMethod("create", InputStream.class, U2.class, Constant_Utf8_Info.class, U4.class, Constant_Info[].class);
+                // 调用create方法获取到具体的属性对象
+                // 由于create方法是static的，因此invoke方法第一个参数为null
+                Attribute_Info attribute_info = (Attribute_Info) method.invoke(null, is, name_index, valueof_name_index, length, constant_infos);
+                // 将属性对象传入属性表数组
+                attribute_infos[i] = attribute_info;
+            }
+        }
+        return attribute_infos;
+    }
+```
+
+#### 利用继承加反射实现统一格式输出
+
