@@ -121,24 +121,25 @@ cafe babe 0000 0034 0026 0a00 0700 1809
 - Class文件也是一张表
 
 Class文件最外层的格式如下
-|类型|名称|数量|
-|--|--|--|
-|U4|magic|1|
-|U2|minor_version|1|
-|U2|major_version|1|
-|U2|costant_pool_count|1|
-|cp_info|costant_pool|costant_pool_count - 1|
-|U2|access_flags|1|
-|U2|this_class|1|
-|U2|super_class|1|
-|U2|interfaces_count|1|
-|U2|interfaces|interfaces_count|
-|U2|fields_count|1|
-|field_info|field|fields_count|
-|U2|methods_count|1|
-|method_info|method|methods_count|
-|U2|attributes_count|1|
-|attribute_info|attributes|attributes_count|
+
+|序号|类型|名称|数量|
+|--|--|--|--|
+|1|U4|magic|1|
+|2|U2|minor_version|1|
+|3|U2|major_version|1|
+|4|U2|costant_pool_count|1|
+|5|cp_info|costant_pool|costant_pool_count - 1|
+|6|U2|access_flags|1|
+|7|U2|this_class|1|
+|8|U2|super_class|1|
+|9|U2|interfaces_count|1|
+|10|U2|interfaces|interfaces_count|
+|11|U2|fields_count|1|
+|12|field_info|field|fields_count|
+|13|U2|methods_count|1|
+|14|method_info|method|methods_count|
+|15|U2|attributes_count|1|
+|16|attribute_info|attributes|attributes_count|
 
 这样我们就可以去定义数据结构了
 
