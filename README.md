@@ -698,6 +698,7 @@ parseConstantPool方法中，要做的事情是
 - 给每一个Constant_Info实例填充数据
 
 Constant_Info类有18个子类，如下图
+
 ![image](https://user-images.githubusercontent.com/10209135/95333512-747cd780-08df-11eb-8257-14cafc574ca5.png)
 
 难道我们要每一个子类都写一个create方法语句吗，诸如
