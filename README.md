@@ -993,3 +993,39 @@ toStringDeclaredFields方法，利用了反射的机制，获取this对象的Dec
 
 枚举每个Field，**VALUE = FieldName: [VALUE(Field)]"**
 
+VALUE(Field) 由 toStringDeclaredObject方法来解决，它会这么做
+- 前提，obj非空
+- 判断，obj是不是属于数组对象，obj.getClass().isArray()
+- 若属于数组对象，获取数组的长度，枚举每一个元素，递归的调用toStringDeclaredObject方法
+- 若非数组对象，按照toString()方法返回
+
+可以看出来，实际上toString()的逻辑，与虚拟机对类文件数据类型的规范是对应的
+
+我们再来看一数据类型规范是怎么样的
+- 类文件中数据只有两种：无符号数、表
+- 无符号数有4种，分别是u1、u2、u4、u8，表示4种字节
+- 表示由无符号数或者表生成的复合数据类型
+- Class文件也是一张表
+
+类似的，toString()的逻辑
+- 类文件中数据只有两种：无符号数、表
+- 类文件中每个数据都以**KEY: [VALUE]** 格式返回
+- 无符号数有4种，分别是u1、u2、u4、u8，分别按照**VALUE = value(parseBytesToHexString())** 格式返回
+- 表示由无符号数或者表生成的复合数据类型
+- 枚举表的每个字段，若是数组对象，枚举数组的每个元素递归处理，否则，按照tostring()返回
+- Class文件特殊处理
+
+对于倒数第二点，表是一定含有具体字段的，按照tostring()返回，实际上是在嵌套地处理，最终一定会走到一个无符号数，按照**VALUE = value(parseBytesToHexString())** 格式返回
+
+上面用到了“嵌套”两个字，我们在输出结果当中，可以看到大量“嵌套”的例子，比如如下
+
+```
+[20] Field_Info(0x00100091008d0001009200000002009303000003db)
+access_flag: [Field_Access_Flag(0x0010), value: [16(0x0010)], FLAGs: [[ACC_FINAL]]]
+name_index: [145(0x0091)]
+valueof_name_index: [Constant_Utf8_Info(0x010004696e7435), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [int5(0x696e7435)]]
+descriptor_index: [141(0x008d)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+attributes_count: [1(0x0001)]
+attributes: [[Attribute_ConstantValue(0x009200000002009303000003db), name_index: [146(0x0092)], valueof_name_index: [Constant_Utf8_Info(0x01000d436f6e7374616e7456616c7565), tag: [1(0x01)], length_string: [13(0x000d)], value_string: [ConstantValue(0x436f6e7374616e7456616c7565)]], length: [2(0x00000002)], constant_index: [147(0x0093)], valueof_constant_index: [Constant_Integer_Info(0x03000003db), tag: [3(0x03)], value: [987(0x000003db)]], constant_value_clazzs: [[class model.Constant_Long_Info], [class model.Constant_Float_Info], [class model.Constant_Double_Info], [class model.Constant_Integer_Info], [class model.Constant_String_Info]]]]
+```
