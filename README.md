@@ -867,7 +867,6 @@ attributes: []
     }
 ```
 - 剩下的情况，都是Table类的子类，按照toString()格式输出
-[Table.java#L120](src/main/java/model/Table.java#L120)
 ```java
     /**
      * 按照特有的格式返回<br>
@@ -881,3 +880,38 @@ attributes: []
         return sb.toString();
     }
 ```
+- 对于Constant_Info类与Attribute_Info类要特殊一些，与Table类的toString类似
+```java
+public abstract class Constant_Info extends Table {
+    /**
+     * 对tag进行特殊处理
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append("\n").append("tag: [").append(tag).append("]");
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+}
+```
+```java
+public abstract class Attribute_Info extends Table {
+    /**
+     * 对name_index、valueof_name_index、length进行特殊处理
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append("\n").append("name_index: [").append(name_index).append("]");
+        sb.append("\n").append("valueof_name_index: [").append(valueof_name_index).append("]");
+        sb.append("\n").append("length: [").append(length).append("]");
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+}
+```
+
+[Table.java#L120](src/main/java/model/Table.java#L120)
