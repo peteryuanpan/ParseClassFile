@@ -880,7 +880,7 @@ attributes: []
         return sb.toString();
     }
 ```
-- 对于Constant_Info类与Attribute_Info类要特殊一些，与Table类的toString类似
+- 对于Constant_Info类与Attribute_Info类要特殊一些，与Table类的toString()类似
 ```java
 public abstract class Constant_Info extends Table {
     /**
@@ -914,4 +914,73 @@ public abstract class Attribute_Info extends Table {
 }
 ```
 
+下面我们来重点说一下Table类的toString()方法
+
 [Table.java#L120](src/main/java/model/Table.java#L120)
+
+```java
+public abstract class Table extends Unsigned {
+...
+    /**
+     * 按照特有的格式返回<br>
+     * 注意：派生类调用toString()方法时，会自动调用该方法，此时this指向的是派生类的对象，非本类的对象
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+
+    /**
+     * 返回类名 及 bytes数组的十六进制字符串
+     * @return
+     */
+    protected String toStringClass() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getClass().getSimpleName());
+        sb.append("(").append(this.parseBytesToHexString()).append(")");
+        return sb.toString();
+    }
+
+    /**
+     * 枚举this对象的全部字段（不包括父类的），以特殊格式返回
+     * @return
+     */
+    protected String toStringDeclaredFields() {
+        StringBuilder sb = new StringBuilder();
+        Field[] fields = this.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            try {
+                field.setAccessible(true);
+                sb.append("\n").append(field.getName()).append(": [");
+                sb.append(toStringDeclaredObject(field.get(this))).append("]");
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return sb.toString();
+    }
+
+    /**
+     * 若对象非数组类型，以name: [value1, value2]的格式返回<br>
+     * 若对象是数组类型，递归枚举每个元素，直到不是数组类型时，以name: [[value1], [value2]]的格式返回
+     * @param obj
+     * @return
+     */
+    private String toStringDeclaredObject(Object obj) {
+        StringBuilder sb = new StringBuilder();
+        if (obj != null) {
+            if (obj.getClass().isArray()) {
+                for (int i = 0; i < Array.getLength(obj); i ++) {
+                    if (i != 0) sb.append(", ");
+                    sb.append("[").append(toStringDeclaredObject(Array.get(obj, i))).append("]");
+                }
+            } else
+                sb.append(obj.toString().replaceAll("\n", ", "));
+        }
+        return sb.toString();
+    }
+}
+```
