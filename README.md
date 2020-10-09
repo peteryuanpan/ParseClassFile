@@ -858,6 +858,26 @@ attributes: []
 ```
 
 仔细观察的朋友，应该能看出一点规律，对于一个变量T t，它的输出规则是KEY: [ VALUE ]
-其中VALUE分两种情况
-- 如果它属于U1、U2、U4、U8 或者 UString，则VALUE = value + "(" + parseBytesToHexString() + ")";
-- 如果
+
+其中VALUE分几种情况
+- 如果它是U1、U2、U4、U8 或者 UString，则VALUE = value + "(" + parseBytesToHexString() + ")";
+```java
+    public String toString() {
+        return value + "(" + parseBytesToHexString() + ")";
+    }
+```
+- 剩下的情况，都是Table类的子类，按照toString()格式输出
+[Table.java#L120](src/main/java/model/Table.java#L120)
+```java
+    /**
+     * 按照特有的格式返回<br>
+     * 注意：派生类调用toString()方法时，会自动调用该方法，此时this指向的是派生类的对象，非本类的对象
+     * @return
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toStringClass());
+        sb.append(toStringDeclaredFields());
+        return sb.toString();
+    }
+```
