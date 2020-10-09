@@ -43,9 +43,9 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 |类文件|源文件|解析结果|说明|
 |--|--|--|--|
 |[Object.class](src/main/resources/classfile/Object.class)|[Object.java](src/main/resources/classfile/Object.java)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)|JDK中最常用的类，java.lang.Object|
-|[VerySimpleClassFile.java](src/main/resources/classfile/VerySimpleClassFile.java)|[VerySimpleClassFile.class](src/main/resources/classfile/VerySimpleClassFile.class)|[ResultVerySimpleClassFile.txt](src/main/resources/classfile/ResultVerySimpleClassFile.txt)|最简单的一个类|
-|[VeryUsefulClassFile.class](src/main/resources/classfile/VeryUsefulClassFile.class)|[VeryUsefulClassFile.java](src/main/resources/classfile/VeryUsefulClassFile.java)|[ResultVeryUsefulClassFile.txt](src/main/resources/classfile/ResultVeryUsefulClassFile.txt)||
-|[TryCatchExceptionDemo.class](src/main/resources/classfile/TryCatchExceptionDemo.class)|[TryCatchExceptionDemo.java](src/main/resources/classfile/TryCatchExceptionDemo.java)|[ResultTryCatchExceptionDemo.txt](src/main/resources/classfile/ResultTryCatchExceptionDemo.txt)||
+|[VerySimpleClassFile.java](src/main/resources/classfile/VerySimpleClassFile.java)|[VerySimpleClassFile.class](src/main/resources/classfile/VerySimpleClassFile.class)|[ResultVerySimpleClassFile.txt](src/main/resources/classfile/ResultVerySimpleClassFile.txt)|一个最简单的类|
+|[VeryUsefulClassFile.class](src/main/resources/classfile/VeryUsefulClassFile.class)|[VeryUsefulClassFile.java](src/main/resources/classfile/VeryUsefulClassFile.java)|[ResultVeryUsefulClassFile.txt](src/main/resources/classfile/ResultVeryUsefulClassFile.txt)|一个包含了许多常量池项、属性表项的类|
+|[TryCatchExceptionDemo.class](src/main/resources/classfile/TryCatchExceptionDemo.class)|[TryCatchExceptionDemo.java](src/main/resources/classfile/TryCatchExceptionDemo.java)|[ResultTryCatchExceptionDemo.txt](src/main/resources/classfile/ResultTryCatchExceptionDemo.txt)|一个用于解释异常处理的类|
 
 ### 浅析类文件结构
 
