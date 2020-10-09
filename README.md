@@ -821,3 +821,43 @@ public class Constant_Double_Info extends Constant_Info {
 
 #### 利用继承加反射实现统一格式输出
 
+看过成果展示的朋友，会不会好奇，解析结果中的输出格式是怎么样的，具体是如何实现的
+
+[ResultClassFileDemo0.txt](src/main/resources/classfile/ResultClassFileDemo0.txt)
+
+```
+--------Begin Constant Pool--------
+constant_pool_count: 38(0x0026)
+[1] Constant_Methodref_Info(0x0a00070018)
+tag: [10(0x0a)]
+class_index: [7(0x0007)]
+valueof_class_index: [Constant_Class_Info(0x07001f), tag: [7(0x07)], name_index: [31(0x001f)], valueof_name_index: [Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374), tag: [1(0x01)], length_string: [16(0x0010)], value_string: [java/lang/Object(0x6a6176612f6c616e672f4f626a656374)]]]
+name_and_type_index: [24(0x0018)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c000a000b), tag: [12(0x0c)], name_index: [10(0x000a)], valueof_name_index: [Constant_Utf8_Info(0x0100063c696e69743e), tag: [1(0x01)], length_string: [6(0x0006)], value_string: [<init>(0x3c696e69743e)]], descriptor_index: [11(0x000b)], valueof_descriptor_index: [Constant_Utf8_Info(0x010003282956), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [()V(0x282956)]]]
+...
+
+--------Begin Class & Interfaces--------
+[this_class] Class_Interface_Info(0x0003)
+class_index: [3(0x0003)]
+valueof_class_index: [Constant_Class_Info(0x07001a), tag: [7(0x07)], name_index: [26(0x001a)], valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f30), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo0(0x636c61737366696c652f436c61737346696c6544656d6f30)]]]
+valueof_name_index: [Constant_Utf8_Info(0x010018636c61737366696c652f436c61737346696c6544656d6f30), tag: [1(0x01)], length_string: [24(0x0018)], value_string: [classfile/ClassFileDemo0(0x636c61737366696c652f436c61737346696c6544656d6f30)]]
+...
+
+--------Begin Fields--------
+fields_count: 1(0x0001)
+[0] Field_Info(0x0000000800090000)
+access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
+name_index: [8(0x0008)]
+valueof_name_index: [Constant_Utf8_Info(0x01000161), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [a(0x61)]]
+descriptor_index: [9(0x0009)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+attributes_count: [0(0x0000)]
+attributes: []
+--------End Fields--------
+...
+```
+
+仔细观察的朋友，应该能看出一点规律，对于一个变量T t，它的输出规则是KEY: [ VALUE ]
+其中VALUE分两种情况
+- 如果它属于U1、U2、U4、U8 或者 UString，则VALUE = value + "(" + parseBytesToHexString() + ")";
+- 如果
