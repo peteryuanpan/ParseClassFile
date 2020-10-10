@@ -8,4 +8,5 @@ public class Constants {
     public static final String VERY_SIMPLE_CLASS_FILE_PATH = RESOURCE_PATH + "VerySimpleClassFile.class";
     public static final String VERY_USEFUL_CLASS_FILE_PATH = RESOURCE_PATH + "VeryUsefulClassFile.class";
     public static final String TRY_CATCH_EXCEPTION_DEMO = RESOURCE_PATH + "TryCatchExceptionDemo.class";
+    public static final String INTEGER_NUMBER_DEMO = RESOURCE_PATH + "IntegerNumberDemo.class";
 }
