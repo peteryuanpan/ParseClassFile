@@ -9,293 +9,312 @@ major_version: 52(0x0034)
 --------End Version--------
 
 --------Begin Constant Pool--------
-constant_pool_count: 62(0x003e)
-[1] Constant_Methodref_Info(0x0a00100030)
+constant_pool_count: 66(0x0042)
+[1] Constant_Methodref_Info(0x0a00120033)
 tag: [10(0x0a)]
-class_index: [16(0x0010)]
-valueof_class_index: [Constant_Class_Info(0x07003d), tag: [7(0x07)], name_index: [61(0x003d)], valueof_name_index: [Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374), tag: [1(0x01)], length_string: [16(0x0010)], value_string: [java/lang/Object(0x6a6176612f6c616e672f4f626a656374)]]]
-name_and_type_index: [48(0x0030)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00230024), tag: [12(0x0c)], name_index: [35(0x0023)], valueof_name_index: [Constant_Utf8_Info(0x0100063c696e69743e), tag: [1(0x01)], length_string: [6(0x0006)], value_string: [<init>(0x3c696e69743e)]], descriptor_index: [36(0x0024)], valueof_descriptor_index: [Constant_Utf8_Info(0x010003282956), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [()V(0x282956)]]]
-[2] Constant_Fieldref_Info(0x09000f0031)
-tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
-name_and_type_index: [49(0x0031)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00110012), tag: [12(0x0c)], name_index: [17(0x0011)], valueof_name_index: [Constant_Utf8_Info(0x0100026131), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a1(0x6131)]], descriptor_index: [18(0x0012)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
-[3] Constant_Fieldref_Info(0x09000f0032)
-tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
-name_and_type_index: [50(0x0032)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00130012), tag: [12(0x0c)], name_index: [19(0x0013)], valueof_name_index: [Constant_Utf8_Info(0x0100026132), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a2(0x6132)]], descriptor_index: [18(0x0012)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
-[4] Constant_Fieldref_Info(0x09000f0033)
-tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+class_index: [18(0x0012)]
+valueof_class_index: [Constant_Class_Info(0x070041), tag: [7(0x07)], name_index: [65(0x0041)], valueof_name_index: [Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374), tag: [1(0x01)], length_string: [16(0x0010)], value_string: [java/lang/Object(0x6a6176612f6c616e672f4f626a656374)]]]
 name_and_type_index: [51(0x0033)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00160012), tag: [12(0x0c)], name_index: [22(0x0016)], valueof_name_index: [Constant_Utf8_Info(0x0100026133), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a3(0x6133)]], descriptor_index: [18(0x0012)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00260027), tag: [12(0x0c)], name_index: [38(0x0026)], valueof_name_index: [Constant_Utf8_Info(0x0100063c696e69743e), tag: [1(0x01)], length_string: [6(0x0006)], value_string: [<init>(0x3c696e69743e)]], descriptor_index: [39(0x0027)], valueof_descriptor_index: [Constant_Utf8_Info(0x010003282956), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [()V(0x282956)]]]
+[2] Constant_Fieldref_Info(0x0900110034)
+tag: [9(0x09)]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+name_and_type_index: [52(0x0034)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00130014), tag: [12(0x0c)], name_index: [19(0x0013)], valueof_name_index: [Constant_Utf8_Info(0x0100026131), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a1(0x6131)]], descriptor_index: [20(0x0014)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
+[3] Constant_Fieldref_Info(0x0900110035)
+tag: [9(0x09)]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+name_and_type_index: [53(0x0035)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00150014), tag: [12(0x0c)], name_index: [21(0x0015)], valueof_name_index: [Constant_Utf8_Info(0x0100026132), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a2(0x6132)]], descriptor_index: [20(0x0014)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
+[4] Constant_Fieldref_Info(0x0900110036)
+tag: [9(0x09)]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+name_and_type_index: [54(0x0036)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00180014), tag: [12(0x0c)], name_index: [24(0x0018)], valueof_name_index: [Constant_Utf8_Info(0x0100026133), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a3(0x6133)]], descriptor_index: [20(0x0014)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
 [5] Constant_Integer_Info(0x0300008000)
 tag: [3(0x03)]
 value: [32768(0x00008000)]
-[6] Constant_Fieldref_Info(0x09000f0034)
+[6] Constant_Fieldref_Info(0x0900110037)
 tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
-name_and_type_index: [52(0x0034)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00170012), tag: [12(0x0c)], name_index: [23(0x0017)], valueof_name_index: [Constant_Utf8_Info(0x0100026134), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a4(0x6134)]], descriptor_index: [18(0x0012)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+name_and_type_index: [55(0x0037)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00190014), tag: [12(0x0c)], name_index: [25(0x0019)], valueof_name_index: [Constant_Utf8_Info(0x0100026134), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a4(0x6134)]], descriptor_index: [20(0x0014)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
 [7] Constant_Integer_Info(0x03075bcd15)
 tag: [3(0x03)]
 value: [123456789(0x075bcd15)]
-[8] Constant_Fieldref_Info(0x09000f0035)
+[8] Constant_Fieldref_Info(0x0900110038)
 tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
-name_and_type_index: [53(0x0035)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00180012), tag: [12(0x0c)], name_index: [24(0x0018)], valueof_name_index: [Constant_Utf8_Info(0x0100026135), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a5(0x6135)]], descriptor_index: [18(0x0012)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
-[9] Constant_Fieldref_Info(0x09000f0036)
-tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
-name_and_type_index: [54(0x0036)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00190012), tag: [12(0x0c)], name_index: [25(0x0019)], valueof_name_index: [Constant_Utf8_Info(0x0100026136), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a6(0x6136)]], descriptor_index: [18(0x0012)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
-[10] Constant_Fieldref_Info(0x09000f0037)
-tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
-name_and_type_index: [55(0x0037)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c001a0012), tag: [12(0x0c)], name_index: [26(0x001a)], valueof_name_index: [Constant_Utf8_Info(0x0100026137), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a7(0x6137)]], descriptor_index: [18(0x0012)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
-[11] Constant_Fieldref_Info(0x09000f0038)
-tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
 name_and_type_index: [56(0x0038)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c001b001c), tag: [12(0x0c)], name_index: [27(0x001b)], valueof_name_index: [Constant_Utf8_Info(0x010004626f6c31), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [bol1(0x626f6c31)]], descriptor_index: [28(0x001c)], valueof_descriptor_index: [Constant_Utf8_Info(0x0100015a), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [Z(0x5a)]]]
-[12] Constant_Fieldref_Info(0x09000f0039)
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c001a0014), tag: [12(0x0c)], name_index: [26(0x001a)], valueof_name_index: [Constant_Utf8_Info(0x0100026135), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a5(0x6135)]], descriptor_index: [20(0x0014)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
+[9] Constant_Fieldref_Info(0x0900110039)
 tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
 name_and_type_index: [57(0x0039)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c001d001e), tag: [12(0x0c)], name_index: [29(0x001d)], valueof_name_index: [Constant_Utf8_Info(0x010003627931), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [by1(0x627931)]], descriptor_index: [30(0x001e)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000142), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [B(0x42)]]]
-[13] Constant_Fieldref_Info(0x09000f003a)
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c001b0014), tag: [12(0x0c)], name_index: [27(0x001b)], valueof_name_index: [Constant_Utf8_Info(0x0100026136), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a6(0x6136)]], descriptor_index: [20(0x0014)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
+[10] Constant_Fieldref_Info(0x090011003a)
 tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
 name_and_type_index: [58(0x003a)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c001f0020), tag: [12(0x0c)], name_index: [31(0x001f)], valueof_name_index: [Constant_Utf8_Info(0x010003636831), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [ch1(0x636831)]], descriptor_index: [32(0x0020)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000143), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [C(0x43)]]]
-[14] Constant_Fieldref_Info(0x09000f003b)
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c001c0014), tag: [12(0x0c)], name_index: [28(0x001c)], valueof_name_index: [Constant_Utf8_Info(0x0100026137), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a7(0x6137)]], descriptor_index: [20(0x0014)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
+[11] Constant_Integer_Info(0x03ff439eb2)
+tag: [3(0x03)]
+value: [-12345678(0xff439eb2)]
+[12] Constant_Fieldref_Info(0x090011003b)
 tag: [9(0x09)]
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
 name_and_type_index: [59(0x003b)]
-valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00210022), tag: [12(0x0c)], name_index: [33(0x0021)], valueof_name_index: [Constant_Utf8_Info(0x010003736831), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [sh1(0x736831)]], descriptor_index: [34(0x0022)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000153), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [S(0x53)]]]
-[15] Constant_Class_Info(0x07003c)
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c001d0014), tag: [12(0x0c)], name_index: [29(0x001d)], valueof_name_index: [Constant_Utf8_Info(0x0100026138), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a8(0x6138)]], descriptor_index: [20(0x0014)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]]
+[13] Constant_Fieldref_Info(0x090011003c)
+tag: [9(0x09)]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+name_and_type_index: [60(0x003c)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c001e001f), tag: [12(0x0c)], name_index: [30(0x001e)], valueof_name_index: [Constant_Utf8_Info(0x010004626f6c31), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [bol1(0x626f6c31)]], descriptor_index: [31(0x001f)], valueof_descriptor_index: [Constant_Utf8_Info(0x0100015a), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [Z(0x5a)]]]
+[14] Constant_Fieldref_Info(0x090011003d)
+tag: [9(0x09)]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+name_and_type_index: [61(0x003d)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00200021), tag: [12(0x0c)], name_index: [32(0x0020)], valueof_name_index: [Constant_Utf8_Info(0x010003627931), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [by1(0x627931)]], descriptor_index: [33(0x0021)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000142), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [B(0x42)]]]
+[15] Constant_Fieldref_Info(0x090011003e)
+tag: [9(0x09)]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+name_and_type_index: [62(0x003e)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00220023), tag: [12(0x0c)], name_index: [34(0x0022)], valueof_name_index: [Constant_Utf8_Info(0x010003636831), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [ch1(0x636831)]], descriptor_index: [35(0x0023)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000143), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [C(0x43)]]]
+[16] Constant_Fieldref_Info(0x090011003f)
+tag: [9(0x09)]
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+name_and_type_index: [63(0x003f)]
+valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00240025), tag: [12(0x0c)], name_index: [36(0x0024)], valueof_name_index: [Constant_Utf8_Info(0x010003736831), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [sh1(0x736831)]], descriptor_index: [37(0x0025)], valueof_descriptor_index: [Constant_Utf8_Info(0x01000153), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [S(0x53)]]]
+[17] Constant_Class_Info(0x070040)
 tag: [7(0x07)]
-name_index: [60(0x003c)]
+name_index: [64(0x0040)]
 valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]
-[16] Constant_Class_Info(0x07003d)
+[18] Constant_Class_Info(0x070041)
 tag: [7(0x07)]
-name_index: [61(0x003d)]
+name_index: [65(0x0041)]
 valueof_name_index: [Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374), tag: [1(0x01)], length_string: [16(0x0010)], value_string: [java/lang/Object(0x6a6176612f6c616e672f4f626a656374)]]
-[17] Constant_Utf8_Info(0x0100026131)
+[19] Constant_Utf8_Info(0x0100026131)
 tag: [1(0x01)]
 length_string: [2(0x0002)]
 value_string: [a1(0x6131)]
-[18] Constant_Utf8_Info(0x01000149)
+[20] Constant_Utf8_Info(0x01000149)
 tag: [1(0x01)]
 length_string: [1(0x0001)]
 value_string: [I(0x49)]
-[19] Constant_Utf8_Info(0x0100026132)
+[21] Constant_Utf8_Info(0x0100026132)
 tag: [1(0x01)]
 length_string: [2(0x0002)]
 value_string: [a2(0x6132)]
-[20] Constant_Utf8_Info(0x01000d436f6e7374616e7456616c7565)
+[22] Constant_Utf8_Info(0x01000d436f6e7374616e7456616c7565)
 tag: [1(0x01)]
 length_string: [13(0x000d)]
 value_string: [ConstantValue(0x436f6e7374616e7456616c7565)]
-[21] Constant_Integer_Info(0x030000007c)
+[23] Constant_Integer_Info(0x030000007c)
 tag: [3(0x03)]
 value: [124(0x0000007c)]
-[22] Constant_Utf8_Info(0x0100026133)
+[24] Constant_Utf8_Info(0x0100026133)
 tag: [1(0x01)]
 length_string: [2(0x0002)]
 value_string: [a3(0x6133)]
-[23] Constant_Utf8_Info(0x0100026134)
+[25] Constant_Utf8_Info(0x0100026134)
 tag: [1(0x01)]
 length_string: [2(0x0002)]
 value_string: [a4(0x6134)]
-[24] Constant_Utf8_Info(0x0100026135)
+[26] Constant_Utf8_Info(0x0100026135)
 tag: [1(0x01)]
 length_string: [2(0x0002)]
 value_string: [a5(0x6135)]
-[25] Constant_Utf8_Info(0x0100026136)
+[27] Constant_Utf8_Info(0x0100026136)
 tag: [1(0x01)]
 length_string: [2(0x0002)]
 value_string: [a6(0x6136)]
-[26] Constant_Utf8_Info(0x0100026137)
+[28] Constant_Utf8_Info(0x0100026137)
 tag: [1(0x01)]
 length_string: [2(0x0002)]
 value_string: [a7(0x6137)]
-[27] Constant_Utf8_Info(0x010004626f6c31)
+[29] Constant_Utf8_Info(0x0100026138)
+tag: [1(0x01)]
+length_string: [2(0x0002)]
+value_string: [a8(0x6138)]
+[30] Constant_Utf8_Info(0x010004626f6c31)
 tag: [1(0x01)]
 length_string: [4(0x0004)]
 value_string: [bol1(0x626f6c31)]
-[28] Constant_Utf8_Info(0x0100015a)
+[31] Constant_Utf8_Info(0x0100015a)
 tag: [1(0x01)]
 length_string: [1(0x0001)]
 value_string: [Z(0x5a)]
-[29] Constant_Utf8_Info(0x010003627931)
+[32] Constant_Utf8_Info(0x010003627931)
 tag: [1(0x01)]
 length_string: [3(0x0003)]
 value_string: [by1(0x627931)]
-[30] Constant_Utf8_Info(0x01000142)
+[33] Constant_Utf8_Info(0x01000142)
 tag: [1(0x01)]
 length_string: [1(0x0001)]
 value_string: [B(0x42)]
-[31] Constant_Utf8_Info(0x010003636831)
+[34] Constant_Utf8_Info(0x010003636831)
 tag: [1(0x01)]
 length_string: [3(0x0003)]
 value_string: [ch1(0x636831)]
-[32] Constant_Utf8_Info(0x01000143)
+[35] Constant_Utf8_Info(0x01000143)
 tag: [1(0x01)]
 length_string: [1(0x0001)]
 value_string: [C(0x43)]
-[33] Constant_Utf8_Info(0x010003736831)
+[36] Constant_Utf8_Info(0x010003736831)
 tag: [1(0x01)]
 length_string: [3(0x0003)]
 value_string: [sh1(0x736831)]
-[34] Constant_Utf8_Info(0x01000153)
+[37] Constant_Utf8_Info(0x01000153)
 tag: [1(0x01)]
 length_string: [1(0x0001)]
 value_string: [S(0x53)]
-[35] Constant_Utf8_Info(0x0100063c696e69743e)
+[38] Constant_Utf8_Info(0x0100063c696e69743e)
 tag: [1(0x01)]
 length_string: [6(0x0006)]
 value_string: [<init>(0x3c696e69743e)]
-[36] Constant_Utf8_Info(0x010003282956)
+[39] Constant_Utf8_Info(0x010003282956)
 tag: [1(0x01)]
 length_string: [3(0x0003)]
 value_string: [()V(0x282956)]
-[37] Constant_Utf8_Info(0x010004436f6465)
+[40] Constant_Utf8_Info(0x010004436f6465)
 tag: [1(0x01)]
 length_string: [4(0x0004)]
 value_string: [Code(0x436f6465)]
-[38] Constant_Utf8_Info(0x01000f4c696e654e756d6265725461626c65)
+[41] Constant_Utf8_Info(0x01000f4c696e654e756d6265725461626c65)
 tag: [1(0x01)]
 length_string: [15(0x000f)]
 value_string: [LineNumberTable(0x4c696e654e756d6265725461626c65)]
-[39] Constant_Utf8_Info(0x0100124c6f63616c5661726961626c655461626c65)
+[42] Constant_Utf8_Info(0x0100124c6f63616c5661726961626c655461626c65)
 tag: [1(0x01)]
 length_string: [18(0x0012)]
 value_string: [LocalVariableTable(0x4c6f63616c5661726961626c655461626c65)]
-[40] Constant_Utf8_Info(0x01000474686973)
+[43] Constant_Utf8_Info(0x01000474686973)
 tag: [1(0x01)]
 length_string: [4(0x0004)]
 value_string: [this(0x74686973)]
-[41] Constant_Utf8_Info(0x01001d4c636c61737366696c652f496e74656765724e756d62657244656d6f3b)
+[44] Constant_Utf8_Info(0x01001d4c636c61737366696c652f496e74656765724e756d62657244656d6f3b)
 tag: [1(0x01)]
 length_string: [29(0x001d)]
 value_string: [Lclassfile/IntegerNumberDemo;(0x4c636c61737366696c652f496e74656765724e756d62657244656d6f3b)]
-[42] Constant_Utf8_Info(0x0100046d61696e)
+[45] Constant_Utf8_Info(0x0100046d61696e)
 tag: [1(0x01)]
 length_string: [4(0x0004)]
 value_string: [main(0x6d61696e)]
-[43] Constant_Utf8_Info(0x010016285b4c6a6176612f6c616e672f537472696e673b2956)
+[46] Constant_Utf8_Info(0x010016285b4c6a6176612f6c616e672f537472696e673b2956)
 tag: [1(0x01)]
 length_string: [22(0x0016)]
 value_string: [([Ljava/lang/String;)V(0x285b4c6a6176612f6c616e672f537472696e673b2956)]
-[44] Constant_Utf8_Info(0x01000461726773)
+[47] Constant_Utf8_Info(0x01000461726773)
 tag: [1(0x01)]
 length_string: [4(0x0004)]
 value_string: [args(0x61726773)]
-[45] Constant_Utf8_Info(0x0100135b4c6a6176612f6c616e672f537472696e673b)
+[48] Constant_Utf8_Info(0x0100135b4c6a6176612f6c616e672f537472696e673b)
 tag: [1(0x01)]
 length_string: [19(0x0013)]
 value_string: [[Ljava/lang/String;(0x5b4c6a6176612f6c616e672f537472696e673b)]
-[46] Constant_Utf8_Info(0x01000a536f7572636546696c65)
+[49] Constant_Utf8_Info(0x01000a536f7572636546696c65)
 tag: [1(0x01)]
 length_string: [10(0x000a)]
 value_string: [SourceFile(0x536f7572636546696c65)]
-[47] Constant_Utf8_Info(0x010016496e74656765724e756d62657244656d6f2e6a617661)
+[50] Constant_Utf8_Info(0x010016496e74656765724e756d62657244656d6f2e6a617661)
 tag: [1(0x01)]
 length_string: [22(0x0016)]
 value_string: [IntegerNumberDemo.java(0x496e74656765724e756d62657244656d6f2e6a617661)]
-[48] Constant_NameAndType_Info(0x0c00230024)
+[51] Constant_NameAndType_Info(0x0c00260027)
 tag: [12(0x0c)]
-name_index: [35(0x0023)]
+name_index: [38(0x0026)]
 valueof_name_index: [Constant_Utf8_Info(0x0100063c696e69743e), tag: [1(0x01)], length_string: [6(0x0006)], value_string: [<init>(0x3c696e69743e)]]
-descriptor_index: [36(0x0024)]
+descriptor_index: [39(0x0027)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x010003282956), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [()V(0x282956)]]
-[49] Constant_NameAndType_Info(0x0c00110012)
-tag: [12(0x0c)]
-name_index: [17(0x0011)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026131), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a1(0x6131)]]
-descriptor_index: [18(0x0012)]
-valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
-[50] Constant_NameAndType_Info(0x0c00130012)
+[52] Constant_NameAndType_Info(0x0c00130014)
 tag: [12(0x0c)]
 name_index: [19(0x0013)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026131), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a1(0x6131)]]
+descriptor_index: [20(0x0014)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+[53] Constant_NameAndType_Info(0x0c00150014)
+tag: [12(0x0c)]
+name_index: [21(0x0015)]
 valueof_name_index: [Constant_Utf8_Info(0x0100026132), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a2(0x6132)]]
-descriptor_index: [18(0x0012)]
+descriptor_index: [20(0x0014)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
-[51] Constant_NameAndType_Info(0x0c00160012)
-tag: [12(0x0c)]
-name_index: [22(0x0016)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026133), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a3(0x6133)]]
-descriptor_index: [18(0x0012)]
-valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
-[52] Constant_NameAndType_Info(0x0c00170012)
-tag: [12(0x0c)]
-name_index: [23(0x0017)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026134), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a4(0x6134)]]
-descriptor_index: [18(0x0012)]
-valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
-[53] Constant_NameAndType_Info(0x0c00180012)
+[54] Constant_NameAndType_Info(0x0c00180014)
 tag: [12(0x0c)]
 name_index: [24(0x0018)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026135), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a5(0x6135)]]
-descriptor_index: [18(0x0012)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026133), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a3(0x6133)]]
+descriptor_index: [20(0x0014)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
-[54] Constant_NameAndType_Info(0x0c00190012)
+[55] Constant_NameAndType_Info(0x0c00190014)
 tag: [12(0x0c)]
 name_index: [25(0x0019)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026136), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a6(0x6136)]]
-descriptor_index: [18(0x0012)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026134), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a4(0x6134)]]
+descriptor_index: [20(0x0014)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
-[55] Constant_NameAndType_Info(0x0c001a0012)
+[56] Constant_NameAndType_Info(0x0c001a0014)
 tag: [12(0x0c)]
 name_index: [26(0x001a)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026137), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a7(0x6137)]]
-descriptor_index: [18(0x0012)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026135), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a5(0x6135)]]
+descriptor_index: [20(0x0014)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
-[56] Constant_NameAndType_Info(0x0c001b001c)
+[57] Constant_NameAndType_Info(0x0c001b0014)
 tag: [12(0x0c)]
 name_index: [27(0x001b)]
-valueof_name_index: [Constant_Utf8_Info(0x010004626f6c31), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [bol1(0x626f6c31)]]
-descriptor_index: [28(0x001c)]
-valueof_descriptor_index: [Constant_Utf8_Info(0x0100015a), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [Z(0x5a)]]
-[57] Constant_NameAndType_Info(0x0c001d001e)
+valueof_name_index: [Constant_Utf8_Info(0x0100026136), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a6(0x6136)]]
+descriptor_index: [20(0x0014)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+[58] Constant_NameAndType_Info(0x0c001c0014)
+tag: [12(0x0c)]
+name_index: [28(0x001c)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026137), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a7(0x6137)]]
+descriptor_index: [20(0x0014)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+[59] Constant_NameAndType_Info(0x0c001d0014)
 tag: [12(0x0c)]
 name_index: [29(0x001d)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026138), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a8(0x6138)]]
+descriptor_index: [20(0x0014)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+[60] Constant_NameAndType_Info(0x0c001e001f)
+tag: [12(0x0c)]
+name_index: [30(0x001e)]
+valueof_name_index: [Constant_Utf8_Info(0x010004626f6c31), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [bol1(0x626f6c31)]]
+descriptor_index: [31(0x001f)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x0100015a), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [Z(0x5a)]]
+[61] Constant_NameAndType_Info(0x0c00200021)
+tag: [12(0x0c)]
+name_index: [32(0x0020)]
 valueof_name_index: [Constant_Utf8_Info(0x010003627931), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [by1(0x627931)]]
-descriptor_index: [30(0x001e)]
+descriptor_index: [33(0x0021)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000142), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [B(0x42)]]
-[58] Constant_NameAndType_Info(0x0c001f0020)
+[62] Constant_NameAndType_Info(0x0c00220023)
 tag: [12(0x0c)]
-name_index: [31(0x001f)]
+name_index: [34(0x0022)]
 valueof_name_index: [Constant_Utf8_Info(0x010003636831), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [ch1(0x636831)]]
-descriptor_index: [32(0x0020)]
+descriptor_index: [35(0x0023)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000143), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [C(0x43)]]
-[59] Constant_NameAndType_Info(0x0c00210022)
+[63] Constant_NameAndType_Info(0x0c00240025)
 tag: [12(0x0c)]
-name_index: [33(0x0021)]
+name_index: [36(0x0024)]
 valueof_name_index: [Constant_Utf8_Info(0x010003736831), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [sh1(0x736831)]]
-descriptor_index: [34(0x0022)]
+descriptor_index: [37(0x0025)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000153), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [S(0x53)]]
-[60] Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f)
+[64] Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f)
 tag: [1(0x01)]
 length_string: [27(0x001b)]
 value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]
-[61] Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374)
+[65] Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374)
 tag: [1(0x01)]
 length_string: [16(0x0010)]
 value_string: [java/lang/Object(0x6a6176612f6c616e672f4f626a656374)]
@@ -308,106 +327,114 @@ FLAGs: [[ACC_PUBLIC], [ACC_SUPER]]
 --------END Access Flag--------
 
 --------Begin Class & Interfaces--------
-[this_class] Class_Interface_Info(0x000f)
-class_index: [15(0x000f)]
-valueof_class_index: [Constant_Class_Info(0x07003c), tag: [7(0x07)], name_index: [60(0x003c)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
+[this_class] Class_Interface_Info(0x0011)
+class_index: [17(0x0011)]
+valueof_class_index: [Constant_Class_Info(0x070040), tag: [7(0x07)], name_index: [64(0x0040)], valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]]
 valueof_name_index: [Constant_Utf8_Info(0x01001b636c61737366696c652f496e74656765724e756d62657244656d6f), tag: [1(0x01)], length_string: [27(0x001b)], value_string: [classfile/IntegerNumberDemo(0x636c61737366696c652f496e74656765724e756d62657244656d6f)]]
 
-[super_class] Class_Interface_Info(0x0010)
-class_index: [16(0x0010)]
-valueof_class_index: [Constant_Class_Info(0x07003d), tag: [7(0x07)], name_index: [61(0x003d)], valueof_name_index: [Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374), tag: [1(0x01)], length_string: [16(0x0010)], value_string: [java/lang/Object(0x6a6176612f6c616e672f4f626a656374)]]]
+[super_class] Class_Interface_Info(0x0012)
+class_index: [18(0x0012)]
+valueof_class_index: [Constant_Class_Info(0x070041), tag: [7(0x07)], name_index: [65(0x0041)], valueof_name_index: [Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374), tag: [1(0x01)], length_string: [16(0x0010)], value_string: [java/lang/Object(0x6a6176612f6c616e672f4f626a656374)]]]
 valueof_name_index: [Constant_Utf8_Info(0x0100106a6176612f6c616e672f4f626a656374), tag: [1(0x01)], length_string: [16(0x0010)], value_string: [java/lang/Object(0x6a6176612f6c616e672f4f626a656374)]]
 
 interfaces_count: 0(0x0000)
 --------End Class & Interfaces--------
 
 --------Begin Fields--------
-fields_count: 11(0x000b)
-[0] Field_Info(0x0000001100120000)
+fields_count: 12(0x000c)
+[0] Field_Info(0x0000001300140000)
 access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
-name_index: [17(0x0011)]
+name_index: [19(0x0013)]
 valueof_name_index: [Constant_Utf8_Info(0x0100026131), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a1(0x6131)]]
-descriptor_index: [18(0x0012)]
+descriptor_index: [20(0x0014)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
 attributes_count: [0(0x0000)]
 attributes: []
-[1] Field_Info(0x00100013001200010014000000020015030000007c)
+[1] Field_Info(0x00100015001400010016000000020017030000007c)
 access_flag: [Field_Access_Flag(0x0010), value: [16(0x0010)], FLAGs: [[ACC_FINAL]]]
-name_index: [19(0x0013)]
+name_index: [21(0x0015)]
 valueof_name_index: [Constant_Utf8_Info(0x0100026132), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a2(0x6132)]]
-descriptor_index: [18(0x0012)]
+descriptor_index: [20(0x0014)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
 attributes_count: [1(0x0001)]
-attributes: [[Attribute_ConstantValue(0x0014000000020015030000007c), name_index: [20(0x0014)], valueof_name_index: [Constant_Utf8_Info(0x01000d436f6e7374616e7456616c7565), tag: [1(0x01)], length_string: [13(0x000d)], value_string: [ConstantValue(0x436f6e7374616e7456616c7565)]], length: [2(0x00000002)], constant_index: [21(0x0015)], valueof_constant_index: [Constant_Integer_Info(0x030000007c), tag: [3(0x03)], value: [124(0x0000007c)]], constant_value_clazzs: [[class model.Constant_Long_Info], [class model.Constant_Float_Info], [class model.Constant_Double_Info], [class model.Constant_Integer_Info], [class model.Constant_String_Info]]]]
-[2] Field_Info(0x0000001600120000)
-access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
-name_index: [22(0x0016)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026133), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a3(0x6133)]]
-descriptor_index: [18(0x0012)]
-valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
-attributes_count: [0(0x0000)]
-attributes: []
-[3] Field_Info(0x0000001700120000)
-access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
-name_index: [23(0x0017)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026134), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a4(0x6134)]]
-descriptor_index: [18(0x0012)]
-valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
-attributes_count: [0(0x0000)]
-attributes: []
-[4] Field_Info(0x0000001800120000)
+attributes: [[Attribute_ConstantValue(0x0016000000020017030000007c), name_index: [22(0x0016)], valueof_name_index: [Constant_Utf8_Info(0x01000d436f6e7374616e7456616c7565), tag: [1(0x01)], length_string: [13(0x000d)], value_string: [ConstantValue(0x436f6e7374616e7456616c7565)]], length: [2(0x00000002)], constant_index: [23(0x0017)], valueof_constant_index: [Constant_Integer_Info(0x030000007c), tag: [3(0x03)], value: [124(0x0000007c)]], constant_value_clazzs: [[class model.Constant_Long_Info], [class model.Constant_Float_Info], [class model.Constant_Double_Info], [class model.Constant_Integer_Info], [class model.Constant_String_Info]]]]
+[2] Field_Info(0x0000001800140000)
 access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
 name_index: [24(0x0018)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026135), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a5(0x6135)]]
-descriptor_index: [18(0x0012)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026133), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a3(0x6133)]]
+descriptor_index: [20(0x0014)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
 attributes_count: [0(0x0000)]
 attributes: []
-[5] Field_Info(0x0000001900120000)
+[3] Field_Info(0x0000001900140000)
 access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
 name_index: [25(0x0019)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026136), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a6(0x6136)]]
-descriptor_index: [18(0x0012)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026134), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a4(0x6134)]]
+descriptor_index: [20(0x0014)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
 attributes_count: [0(0x0000)]
 attributes: []
-[6] Field_Info(0x0000001a00120000)
+[4] Field_Info(0x0000001a00140000)
 access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
 name_index: [26(0x001a)]
-valueof_name_index: [Constant_Utf8_Info(0x0100026137), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a7(0x6137)]]
-descriptor_index: [18(0x0012)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026135), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a5(0x6135)]]
+descriptor_index: [20(0x0014)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
 attributes_count: [0(0x0000)]
 attributes: []
-[7] Field_Info(0x0000001b001c0000)
+[5] Field_Info(0x0000001b00140000)
 access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
 name_index: [27(0x001b)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026136), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a6(0x6136)]]
+descriptor_index: [20(0x0014)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+attributes_count: [0(0x0000)]
+attributes: []
+[6] Field_Info(0x0000001c00140000)
+access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
+name_index: [28(0x001c)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026137), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a7(0x6137)]]
+descriptor_index: [20(0x0014)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+attributes_count: [0(0x0000)]
+attributes: []
+[7] Field_Info(0x0000001d00140000)
+access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
+name_index: [29(0x001d)]
+valueof_name_index: [Constant_Utf8_Info(0x0100026138), tag: [1(0x01)], length_string: [2(0x0002)], value_string: [a8(0x6138)]]
+descriptor_index: [20(0x0014)]
+valueof_descriptor_index: [Constant_Utf8_Info(0x01000149), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [I(0x49)]]
+attributes_count: [0(0x0000)]
+attributes: []
+[8] Field_Info(0x0000001e001f0000)
+access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
+name_index: [30(0x001e)]
 valueof_name_index: [Constant_Utf8_Info(0x010004626f6c31), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [bol1(0x626f6c31)]]
-descriptor_index: [28(0x001c)]
+descriptor_index: [31(0x001f)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x0100015a), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [Z(0x5a)]]
 attributes_count: [0(0x0000)]
 attributes: []
-[8] Field_Info(0x0000001d001e0000)
+[9] Field_Info(0x0000002000210000)
 access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
-name_index: [29(0x001d)]
+name_index: [32(0x0020)]
 valueof_name_index: [Constant_Utf8_Info(0x010003627931), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [by1(0x627931)]]
-descriptor_index: [30(0x001e)]
+descriptor_index: [33(0x0021)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000142), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [B(0x42)]]
 attributes_count: [0(0x0000)]
 attributes: []
-[9] Field_Info(0x0000001f00200000)
+[10] Field_Info(0x0000002200230000)
 access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
-name_index: [31(0x001f)]
+name_index: [34(0x0022)]
 valueof_name_index: [Constant_Utf8_Info(0x010003636831), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [ch1(0x636831)]]
-descriptor_index: [32(0x0020)]
+descriptor_index: [35(0x0023)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000143), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [C(0x43)]]
 attributes_count: [0(0x0000)]
 attributes: []
-[10] Field_Info(0x0000002100220000)
+[11] Field_Info(0x0000002400250000)
 access_flag: [Field_Access_Flag(0x0000), value: [0(0x0000)], FLAGs: []]
-name_index: [33(0x0021)]
+name_index: [36(0x0024)]
 valueof_name_index: [Constant_Utf8_Info(0x010003736831), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [sh1(0x736831)]]
-descriptor_index: [34(0x0022)]
+descriptor_index: [37(0x0025)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x01000153), tag: [1(0x01)], length_string: [1(0x0001)], value_string: [S(0x53)]]
 attributes_count: [0(0x0000)]
 attributes: []
@@ -415,34 +442,34 @@ attributes: []
 
 --------Begin Methods--------
 methods_count: 2(0x0002)
-[0] Method_Info(0x00010023002400010025000000a0000200010000004a2ab700012a107bb500022a107cb500032a117fffb500042a1205b500062a1207b500082a118001b500092a118000b5000a2a04b5000b2a100db5000c2a1031b5000d2a117530b5000eb100000002002600000032000c0000000300040005000a00060010000700170008001d00090023000b002a000c0031000e0036000f003c00100042001100270000000c00010000004a002800290000)
+[0] Method_Info(0x00010026002700010028000000aa00020001000000502ab700012a107bb500022a107cb500032a117fffb500042a1205b500062a1207b500082a118001b500092a118000b5000a2a120bb5000c2a04b5000d2a100db5000e2a1031b5000f2a117530b50010b100000002002900000036000d0000000300040005000a00060010000700170008001d00090023000b002a000c0031000d0037000f003c00100042001100480012002a0000000c000100000050002b002c0000)
 access_flag: [Method_Access_Flag(0x0001), value: [1(0x0001)], FLAGs: [[ACC_PUBLIC]]]
-name_index: [35(0x0023)]
+name_index: [38(0x0026)]
 valueof_name_index: [Constant_Utf8_Info(0x0100063c696e69743e), tag: [1(0x01)], length_string: [6(0x0006)], value_string: [<init>(0x3c696e69743e)]]
-descriptor_index: [36(0x0024)]
+descriptor_index: [39(0x0027)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x010003282956), tag: [1(0x01)], length_string: [3(0x0003)], value_string: [()V(0x282956)]]
 attributes_count: [1(0x0001)]
-attributes: [[Attribute_Code(0x0025000000a0000200010000004a2ab700012a107bb500022a107cb500032a117fffb500042a1205b500062a1207b500082a118001b500092a118000b5000a2a04b5000b2a100db5000c2a1031b5000d2a117530b5000eb100000002002600000032000c0000000300040005000a00060010000700170008001d00090023000b002a000c0031000e0036000f003c00100042001100270000000c00010000004a002800290000), name_index: [37(0x0025)], valueof_name_index: [Constant_Utf8_Info(0x010004436f6465), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [Code(0x436f6465)]], length: [160(0x000000a0)], max_statck: [2(0x0002)], max_locals: [1(0x0001)], code_length: [74(0x0000004a)], code: [ByteCode(0x2ab700012a107bb500022a107cb500032a117fffb500042a1205b500062a1207b500082a118001b500092a118000b5000a2a04b5000b2a100db5000c2a1031b5000d2a117530b5000eb1), length: [74], value: []], exception_table_length: [0(0x0000)], exception_table: [], attributes_count: [2(0x0002)], attributes: [[Attribute_LineNumberTable(0x002600000032000c0000000300040005000a00060010000700170008001d00090023000b002a000c0031000e0036000f003c001000420011), name_index: [38(0x0026)], valueof_name_index: [Constant_Utf8_Info(0x01000f4c696e654e756d6265725461626c65), tag: [1(0x01)], length_string: [15(0x000f)], value_string: [LineNumberTable(0x4c696e654e756d6265725461626c65)]], length: [50(0x00000032)], table_length: [12(0x000c)], table: [[Line_Number_Info(0x00000003), start_pc: [0(0x0000)], line_number: [3(0x0003)]], [Line_Number_Info(0x00040005), start_pc: [4(0x0004)], line_number: [5(0x0005)]], [Line_Number_Info(0x000a0006), start_pc: [10(0x000a)], line_number: [6(0x0006)]], [Line_Number_Info(0x00100007), start_pc: [16(0x0010)], line_number: [7(0x0007)]], [Line_Number_Info(0x00170008), start_pc: [23(0x0017)], line_number: [8(0x0008)]], [Line_Number_Info(0x001d0009), start_pc: [29(0x001d)], line_number: [9(0x0009)]], [Line_Number_Info(0x0023000b), start_pc: [35(0x0023)], line_number: [11(0x000b)]], [Line_Number_Info(0x002a000c), start_pc: [42(0x002a)], line_number: [12(0x000c)]], [Line_Number_Info(0x0031000e), start_pc: [49(0x0031)], line_number: [14(0x000e)]], [Line_Number_Info(0x0036000f), start_pc: [54(0x0036)], line_number: [15(0x000f)]], [Line_Number_Info(0x003c0010), start_pc: [60(0x003c)], line_number: [16(0x0010)]], [Line_Number_Info(0x00420011), start_pc: [66(0x0042)], line_number: [17(0x0011)]]]], [Attribute_LocalVariableTable(0x00270000000c00010000004a002800290000), name_index: [39(0x0027)], valueof_name_index: [Constant_Utf8_Info(0x0100124c6f63616c5661726961626c655461626c65), tag: [1(0x01)], length_string: [18(0x0012)], value_string: [LocalVariableTable(0x4c6f63616c5661726961626c655461626c65)]], length: [12(0x0000000c)], table_length: [1(0x0001)], table: [[Local_Variable_Info(0x0000004a002800290000), start_pc: [0(0x0000)], length: [74(0x004a)], name_index: [40(0x0028)], descriptor_index: [41(0x0029)], index: [0(0x0000)]]]]]]]
-[1] Method_Info(0x0009002a002b000100250000002b0000000100000001b10000000200260000000600010000001400270000000c000100000001002c002d0000)
+attributes: [[Attribute_Code(0x0028000000aa00020001000000502ab700012a107bb500022a107cb500032a117fffb500042a1205b500062a1207b500082a118001b500092a118000b5000a2a120bb5000c2a04b5000d2a100db5000e2a1031b5000f2a117530b50010b100000002002900000036000d0000000300040005000a00060010000700170008001d00090023000b002a000c0031000d0037000f003c00100042001100480012002a0000000c000100000050002b002c0000), name_index: [40(0x0028)], valueof_name_index: [Constant_Utf8_Info(0x010004436f6465), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [Code(0x436f6465)]], length: [170(0x000000aa)], max_statck: [2(0x0002)], max_locals: [1(0x0001)], code_length: [80(0x00000050)], code: [ByteCode(0x2ab700012a107bb500022a107cb500032a117fffb500042a1205b500062a1207b500082a118001b500092a118000b5000a2a120bb5000c2a04b5000d2a100db5000e2a1031b5000f2a117530b50010b1), length: [80], value: []], exception_table_length: [0(0x0000)], exception_table: [], attributes_count: [2(0x0002)], attributes: [[Attribute_LineNumberTable(0x002900000036000d0000000300040005000a00060010000700170008001d00090023000b002a000c0031000d0037000f003c00100042001100480012), name_index: [41(0x0029)], valueof_name_index: [Constant_Utf8_Info(0x01000f4c696e654e756d6265725461626c65), tag: [1(0x01)], length_string: [15(0x000f)], value_string: [LineNumberTable(0x4c696e654e756d6265725461626c65)]], length: [54(0x00000036)], table_length: [13(0x000d)], table: [[Line_Number_Info(0x00000003), start_pc: [0(0x0000)], line_number: [3(0x0003)]], [Line_Number_Info(0x00040005), start_pc: [4(0x0004)], line_number: [5(0x0005)]], [Line_Number_Info(0x000a0006), start_pc: [10(0x000a)], line_number: [6(0x0006)]], [Line_Number_Info(0x00100007), start_pc: [16(0x0010)], line_number: [7(0x0007)]], [Line_Number_Info(0x00170008), start_pc: [23(0x0017)], line_number: [8(0x0008)]], [Line_Number_Info(0x001d0009), start_pc: [29(0x001d)], line_number: [9(0x0009)]], [Line_Number_Info(0x0023000b), start_pc: [35(0x0023)], line_number: [11(0x000b)]], [Line_Number_Info(0x002a000c), start_pc: [42(0x002a)], line_number: [12(0x000c)]], [Line_Number_Info(0x0031000d), start_pc: [49(0x0031)], line_number: [13(0x000d)]], [Line_Number_Info(0x0037000f), start_pc: [55(0x0037)], line_number: [15(0x000f)]], [Line_Number_Info(0x003c0010), start_pc: [60(0x003c)], line_number: [16(0x0010)]], [Line_Number_Info(0x00420011), start_pc: [66(0x0042)], line_number: [17(0x0011)]], [Line_Number_Info(0x00480012), start_pc: [72(0x0048)], line_number: [18(0x0012)]]]], [Attribute_LocalVariableTable(0x002a0000000c000100000050002b002c0000), name_index: [42(0x002a)], valueof_name_index: [Constant_Utf8_Info(0x0100124c6f63616c5661726961626c655461626c65), tag: [1(0x01)], length_string: [18(0x0012)], value_string: [LocalVariableTable(0x4c6f63616c5661726961626c655461626c65)]], length: [12(0x0000000c)], table_length: [1(0x0001)], table: [[Local_Variable_Info(0x00000050002b002c0000), start_pc: [0(0x0000)], length: [80(0x0050)], name_index: [43(0x002b)], descriptor_index: [44(0x002c)], index: [0(0x0000)]]]]]]]
+[1] Method_Info(0x0009002d002e000100280000002b0000000100000001b100000002002900000006000100000015002a0000000c000100000001002f00300000)
 access_flag: [Method_Access_Flag(0x0009), value: [9(0x0009)], FLAGs: [[ACC_PUBLIC], [ACC_STATIC]]]
-name_index: [42(0x002a)]
+name_index: [45(0x002d)]
 valueof_name_index: [Constant_Utf8_Info(0x0100046d61696e), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [main(0x6d61696e)]]
-descriptor_index: [43(0x002b)]
+descriptor_index: [46(0x002e)]
 valueof_descriptor_index: [Constant_Utf8_Info(0x010016285b4c6a6176612f6c616e672f537472696e673b2956), tag: [1(0x01)], length_string: [22(0x0016)], value_string: [([Ljava/lang/String;)V(0x285b4c6a6176612f6c616e672f537472696e673b2956)]]
 attributes_count: [1(0x0001)]
-attributes: [[Attribute_Code(0x00250000002b0000000100000001b10000000200260000000600010000001400270000000c000100000001002c002d0000), name_index: [37(0x0025)], valueof_name_index: [Constant_Utf8_Info(0x010004436f6465), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [Code(0x436f6465)]], length: [43(0x0000002b)], max_statck: [0(0x0000)], max_locals: [1(0x0001)], code_length: [1(0x00000001)], code: [ByteCode(0xb1), length: [1], value: []], exception_table_length: [0(0x0000)], exception_table: [], attributes_count: [2(0x0002)], attributes: [[Attribute_LineNumberTable(0x002600000006000100000014), name_index: [38(0x0026)], valueof_name_index: [Constant_Utf8_Info(0x01000f4c696e654e756d6265725461626c65), tag: [1(0x01)], length_string: [15(0x000f)], value_string: [LineNumberTable(0x4c696e654e756d6265725461626c65)]], length: [6(0x00000006)], table_length: [1(0x0001)], table: [[Line_Number_Info(0x00000014), start_pc: [0(0x0000)], line_number: [20(0x0014)]]]], [Attribute_LocalVariableTable(0x00270000000c000100000001002c002d0000), name_index: [39(0x0027)], valueof_name_index: [Constant_Utf8_Info(0x0100124c6f63616c5661726961626c655461626c65), tag: [1(0x01)], length_string: [18(0x0012)], value_string: [LocalVariableTable(0x4c6f63616c5661726961626c655461626c65)]], length: [12(0x0000000c)], table_length: [1(0x0001)], table: [[Local_Variable_Info(0x00000001002c002d0000), start_pc: [0(0x0000)], length: [1(0x0001)], name_index: [44(0x002c)], descriptor_index: [45(0x002d)], index: [0(0x0000)]]]]]]]
+attributes: [[Attribute_Code(0x00280000002b0000000100000001b100000002002900000006000100000015002a0000000c000100000001002f00300000), name_index: [40(0x0028)], valueof_name_index: [Constant_Utf8_Info(0x010004436f6465), tag: [1(0x01)], length_string: [4(0x0004)], value_string: [Code(0x436f6465)]], length: [43(0x0000002b)], max_statck: [0(0x0000)], max_locals: [1(0x0001)], code_length: [1(0x00000001)], code: [ByteCode(0xb1), length: [1], value: []], exception_table_length: [0(0x0000)], exception_table: [], attributes_count: [2(0x0002)], attributes: [[Attribute_LineNumberTable(0x002900000006000100000015), name_index: [41(0x0029)], valueof_name_index: [Constant_Utf8_Info(0x01000f4c696e654e756d6265725461626c65), tag: [1(0x01)], length_string: [15(0x000f)], value_string: [LineNumberTable(0x4c696e654e756d6265725461626c65)]], length: [6(0x00000006)], table_length: [1(0x0001)], table: [[Line_Number_Info(0x00000015), start_pc: [0(0x0000)], line_number: [21(0x0015)]]]], [Attribute_LocalVariableTable(0x002a0000000c000100000001002f00300000), name_index: [42(0x002a)], valueof_name_index: [Constant_Utf8_Info(0x0100124c6f63616c5661726961626c655461626c65), tag: [1(0x01)], length_string: [18(0x0012)], value_string: [LocalVariableTable(0x4c6f63616c5661726961626c655461626c65)]], length: [12(0x0000000c)], table_length: [1(0x0001)], table: [[Local_Variable_Info(0x00000001002f00300000), start_pc: [0(0x0000)], length: [1(0x0001)], name_index: [47(0x002f)], descriptor_index: [48(0x0030)], index: [0(0x0000)]]]]]]]
 --------End Methods--------
 
 --------Begin Attributes--------
 attributes_count: 1(0x0001)
-[0] Attribute_SourceFile(0x002e00000002002f010016496e74656765724e756d62657244656d6f2e6a617661)
-name_index: [46(0x002e)]
+[0] Attribute_SourceFile(0x0031000000020032010016496e74656765724e756d62657244656d6f2e6a617661)
+name_index: [49(0x0031)]
 valueof_name_index: [Constant_Utf8_Info(0x01000a536f7572636546696c65)
 tag: [1(0x01)]
 length_string: [10(0x000a)]
 value_string: [SourceFile(0x536f7572636546696c65)]]
 length: [2(0x00000002)]
-sourcefile_name_index: [47(0x002f)]
+sourcefile_name_index: [50(0x0032)]
 valueof_sourcefile_name_index: [Constant_Utf8_Info(0x010016496e74656765724e756d62657244656d6f2e6a617661), tag: [1(0x01)], length_string: [22(0x0016)], value_string: [IntegerNumberDemo.java(0x496e74656765724e756d62657244656d6f2e6a617661)]]
 --------End Attributes--------
 
