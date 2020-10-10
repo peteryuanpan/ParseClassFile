@@ -42,7 +42,7 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 
 |类文件|源文件|解析结果|说明|
 |--|--|--|--|
-|[Object.class](src/main/resources/classfile/Object.class)|[Object.java](src/main/resources/classfile/Object.java)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)|JDK中最常用的类，java.lang.Object|
+|[Object.class](src/main/resources/classfile/Object.class)|[Object.java](src/main/resources/classfile/Object.java)|[ResultObject.txt](src/main/resources/classfile/ResultObject.txt)|JDK中常用的类|
 |[VerySimpleClassFile.java](src/main/resources/classfile/VerySimpleClassFile.java)|[VerySimpleClassFile.class](src/main/resources/classfile/VerySimpleClassFile.class)|[ResultVerySimpleClassFile.txt](src/main/resources/classfile/ResultVerySimpleClassFile.txt)|一个最简单的类|
 |[VeryUsefulClassFile.java](src/main/resources/classfile/VeryUsefulClassFile.java)|[VeryUsefulClassFile.class](src/main/resources/classfile/VeryUsefulClassFile.class)|[ResultVeryUsefulClassFile.txt](src/main/resources/classfile/ResultVeryUsefulClassFile.txt)|一个非常有用的类|
 |[TryCatchExceptionDemo.class](src/main/resources/classfile/TryCatchExceptionDemo.class)|[TryCatchExceptionDemo.java](src/main/resources/classfile/TryCatchExceptionDemo.java)|[ResultTryCatchExceptionDemo.txt](src/main/resources/classfile/ResultTryCatchExceptionDemo.txt)|一个用于解释异常处理的类|
