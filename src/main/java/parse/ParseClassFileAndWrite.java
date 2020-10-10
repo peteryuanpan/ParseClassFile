@@ -26,6 +26,6 @@ public class ParseClassFileAndWrite {
     }
 
     public static void main(String[] args) {
-        parse_write(Constants.TRY_CATCH_EXCEPTION_DEMO);
+        parse_write(Constants.VERY_USEFUL_CLASS_FILE_PATH);
     }
 }
