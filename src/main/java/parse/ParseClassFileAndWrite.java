@@ -26,6 +26,10 @@ public class ParseClassFileAndWrite {
     }
 
     public static void main(String[] args) {
-        parse_write(Constants.INTEGER_NUMBER_DEMO);
+        //parse_write(Constants.JAVA_LANG_OBJECT_CLASS_FILE_PATH);
+        //parse_write(Constants.VERY_SIMPLE_CLASS_FILE_PATH);
+        //parse_write(Constants.VERY_USEFUL_CLASS_FILE_PATH);
+        //parse_write(Constants.TRY_CATCH_EXCEPTION_DEMO);
+        //parse_write(Constants.INTEGER_NUMBER_DEMO);
     }
 }

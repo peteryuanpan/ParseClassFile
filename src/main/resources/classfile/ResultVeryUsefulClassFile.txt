@@ -223,6 +223,7 @@ valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c0092008e), tag: [12(
 [40] Constant_Float_Info(0x0442c80000)
 tag: [4(0x04)]
 value: [1120403456(0x42c80000)]
+value_float: [100.0]
 [41] Constant_Fieldref_Info(0x09006f00f7)
 tag: [9(0x09)]
 class_index: [111(0x006f)]
@@ -258,6 +259,7 @@ valueof_name_index: [Constant_Utf8_Info(0x01000f6a6176612f6c616e672f466c6f6174),
 [47] Constant_Float_Info(0x047f7fffff)
 tag: [4(0x04)]
 value: [2139095039(0x7f7fffff)]
+value_float: [3.4028235E38]
 [48] Constant_Fieldref_Info(0x09006f00fd)
 tag: [9(0x09)]
 class_index: [111(0x006f)]
@@ -267,6 +269,7 @@ valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00980096), tag: [12(
 [49] Constant_Float_Info(0x0400000001)
 tag: [4(0x04)]
 value: [1(0x00000001)]
+value_float: [1.4E-45]
 [50] Constant_Fieldref_Info(0x09006f00fe)
 tag: [9(0x09)]
 class_index: [111(0x006f)]
@@ -346,6 +349,7 @@ valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c009f009b), tag: [12(
 [68] Constant_Double_Info(0x06408f400000000000)
 tag: [6(0x06)]
 value: [4652007308841189376(0x408f400000000000)]
+value_double: [1000.0]
 [69] Constant_Large_Numeric_Continued_Info(0x)
 tag: [null]
 [70] Constant_Fieldref_Info(0x09006f0108)
@@ -357,6 +361,7 @@ valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00a000a1), tag: [12(
 [71] Constant_Double_Info(0x0654b249ad2594c37d)
 tag: [6(0x06)]
 value: [6103021453049119613(0x54b249ad2594c37d)]
+value_double: [1.0E100]
 [72] Constant_Large_Numeric_Continued_Info(0x)
 tag: [null]
 [73] Constant_Fieldref_Info(0x09006f0109)
@@ -394,6 +399,7 @@ valueof_name_index: [Constant_Utf8_Info(0x0100106a6176612f6c616e672f446f75626c65
 [79] Constant_Double_Info(0x067fefffffffffffff)
 tag: [6(0x06)]
 value: [9218868437227405311(0x7fefffffffffffff)]
+value_double: [1.7976931348623157E308]
 [80] Constant_Large_Numeric_Continued_Info(0x)
 tag: [null]
 [81] Constant_Fieldref_Info(0x09006f010f)
@@ -405,6 +411,7 @@ valueof_name_and_type_index: [Constant_NameAndType_Info(0x0c00a400a1), tag: [12(
 [82] Constant_Double_Info(0x060000000000000001)
 tag: [6(0x06)]
 value: [1(0x0000000000000001)]
+value_double: [4.9E-324]
 [83] Constant_Large_Numeric_Continued_Info(0x)
 tag: [null]
 [84] Constant_Fieldref_Info(0x09006f0110)
