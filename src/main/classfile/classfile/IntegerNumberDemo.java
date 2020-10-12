@@ -11,7 +11,7 @@ public class IntegerNumberDemo {
     int a6 = -1;
     int a7 = -32767;
     int a8 = -32768;
-    int a9 = -12345678;
+    int a9 = -32769;
 
     boolean bol1 = true;
     byte by1 = 13;
