@@ -25,7 +25,7 @@ JAVA程序或文件，需要编译成.class文件，然后交于虚拟机去加�
 
 对类文件结构的理解程度，决定了对虚拟机原理的理解深度
 
-我在 [深入理解JAVA虚拟机](https://github.com/peteryuanpan/notebook/blob/master/深入理解JAVA虚拟机) 中写了好多篇文章，都是关于虚拟机原理的，其中 [第2章类文件结构与字节码指令](https://github.com/peteryuanpan/notebook/tree/master/深入理解JAVA虚拟机#第2章类文件结构与字节码指令) 是类文件结构解析的章节，该项目是第2章理论的具体实现项目，第2章是该项目的理论文档
+我在 [深入理解JAVA虚拟机](https://github.com/peteryuanpan/notebook/blob/master/深入理解JAVA虚拟机) 中写了好多篇笔记，都是关于虚拟机原理的，其中 [第2章类文件结构与字节码指令](https://github.com/peteryuanpan/notebook/tree/master/深入理解JAVA虚拟机#第2章类文件结构与字节码指令) 是类文件结构解析的章节，该项目是第2章理论的具体实现项目，第2章是该项目的理论文档
 
 我还参考了周志明的《深入理解JAVA虚拟机》第二版，其中第6章就是专门用于分析类文件结构的
 
